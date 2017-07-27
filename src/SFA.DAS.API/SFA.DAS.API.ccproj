@@ -41,16 +41,6 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.EAS.Api\SFA.DAS.EAS.Account.Api.csproj">
-      <Name>SFA.DAS.EAS.Account.Api</Name>
-      <Project>{40190475-1220-4cf8-8a60-223facafeda1}</Project>
-      <Private>True</Private>
-      <RoleType>Web</RoleType>
-      <RoleName>SFA.DAS.EAS.Account.Api</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="SFA.DAS.EAS.Account.ApiContent\" />
     <Folder Include="Configuration" />
   </ItemGroup>

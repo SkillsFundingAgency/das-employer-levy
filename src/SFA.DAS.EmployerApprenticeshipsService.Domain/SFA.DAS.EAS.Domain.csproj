@@ -143,11 +143,9 @@
   <ItemGroup>
     <Compile Include="Configuration\EmployerApprenticeshipApiConfiguration.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
-    <Compile Include="Data\Repositories\ITransactionRepository.cs" />
     <Compile Include="Extensions\EnumerableExtension.cs" />
     <Compile Include="Http\InternalServerErrorException.cs" />
     <Compile Include="Http\RequestTimeOutException.cs" />
-    <Compile Include="Interfaces\IAcademicYear.cs" />
     <Compile Include="Interfaces\IAzureAdAuthenticationService.cs" />
     <Compile Include="Interfaces\ICookieStorageService.cs" />
     <Compile Include="Interfaces\ICurrentDateTime.cs" />
@@ -197,19 +195,8 @@
     <Compile Include="Configuration\EventsApiClientConfiguration.cs" />
     <Compile Include="Configuration\PostcodeAnywhereConfiguration.cs" />
     <Compile Include="Configuration\ReferenceDataApiClientConfiguration.cs" />
-    <Compile Include="Data\Repositories\IAccountRepository.cs" />
-    <Compile Include="Data\Repositories\IAccountTeamRepository.cs" />
     <Compile Include="Data\Repositories\IEnglishFractionRepository.cs" />
     <Compile Include="Data\Repositories\IDasLevyRepository.cs" />
-    <Compile Include="Data\Repositories\IEmployerAccountRepository.cs" />
-    <Compile Include="Data\Repositories\IEmployerAgreementRepository.cs" />
-    <Compile Include="Data\Repositories\IEmployerSchemesRepository.cs" />
-    <Compile Include="Data\Repositories\IInvitationRepository.cs" />
-    <Compile Include="Data\Repositories\IMembershipRepository.cs" />
-    <Compile Include="Data\Repositories\IProviderRepository.cs" />
-    <Compile Include="Data\Repositories\IStandardsRepository.cs" />
-    <Compile Include="Data\Repositories\IUserAccountRepository.cs" />
-    <Compile Include="Data\Repositories\IUserRepository.cs" />
     <Compile Include="Models\Employer\EmployerInformation.cs" />
     <Compile Include="Data\Entities\Account\Account.cs" />
     <Compile Include="Data\Entities\Account\AccountBalance.cs" />
@@ -225,13 +212,9 @@
     <Compile Include="Extensions\NullableDateTimeExtension.cs" />
     <Compile Include="Models\ApprenticeshipCourse\Framework.cs" />
     <Compile Include="Models\ApprenticeshipCourse\FrameworksView.cs" />
-    <Compile Include="Interfaces\IAddressLookupService.cs" />
-    <Compile Include="Interfaces\IApprenticeshipInfoServiceConfiguration.cs" />
-    <Compile Include="Interfaces\IApprenticeshipInfoServiceWrapper.cs" />
     <Compile Include="Interfaces\IAuditService.cs" />
     <Compile Include="Interfaces\ICache.cs" />
     <Compile Include="Interfaces\IDasLevyService.cs" />
-    <Compile Include="Data\ILegalEntityRepository.cs" />
     <Compile Include="Interfaces\IConfiguration.cs" />
     <Compile Include="Interfaces\IDasAccountService.cs" />
     <Compile Include="Interfaces\IEmployerVerificationService.cs" />

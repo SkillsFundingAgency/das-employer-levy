@@ -87,10 +87,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.EAS.PaymentUpdater.WebJob\SFA.DAS.EAS.PaymentUpdater.WebJob.csproj">
-      <Project>{09CAD527-1455-44F2-A857-14C695FDEE3F}</Project>
-      <Name>SFA.DAS.EAS.PaymentUpdater.WebJob</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EAS.Application.csproj">
       <Project>{0226F97A-704E-49B0-A100-B75FEEC9C8AD}</Project>
       <Name>SFA.DAS.EAS.Application</Name>

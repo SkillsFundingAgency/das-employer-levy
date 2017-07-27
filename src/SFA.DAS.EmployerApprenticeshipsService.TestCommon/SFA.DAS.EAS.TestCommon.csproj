@@ -150,34 +150,23 @@
     <Compile Include="DbCleanup\ICleanTransactionsDatabase.cs" />
     <Compile Include="DbCleanup\IUpdateTransactionLine.cs" />
     <Compile Include="DbCleanup\UpdateTransactionLine.cs" />
-    <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\LevyWorkerDefaultRegistry.cs" />
     <Compile Include="Extensions\DateTimeExtention.cs" />
     <Compile Include="MockModels\MockMessage.cs" />
     <Compile Include="MockPolicy\MockMessagePolicy.cs" />
-    <Compile Include="ObjectMothers\AddPayeToNewLegalEntityCommandObjectMother.cs" />
-    <Compile Include="ObjectMothers\ApprenticeshipObjectMother.cs" />
     <Compile Include="ObjectMothers\DeclarationsObjectMother.cs" />
-    <Compile Include="ObjectMothers\FrameworkObjectMother.cs" />
     <Compile Include="ObjectMothers\GetHMRCLevyDeclarationResponseObjectMother.cs" />
     <Compile Include="ObjectMothers\LevyDeclarationSourceDataObjectMother.cs" />
     <Compile Include="ObjectMothers\LevyDeclarationViewsObjectMother.cs" />
     <Compile Include="ObjectMothers\EnglishFractionObjectMother.cs" />
     <Compile Include="ObjectMothers\MessageObjectMother.cs" />
     <Compile Include="ObjectMothers\RefreshEmployerLevyDataCommandObjectMother.cs" />
-    <Compile Include="ObjectMothers\StandardObjectMother.cs" />
     <Compile Include="ObjectMothers\TransactionLineObjectMother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioCommonSteps\AccountSteps.cs" />
     <Compile Include="ScenarioCommonSteps\LevyWorkerSteps.cs" />
-    <Compile Include="ScenarioCommonSteps\UserSteps.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.EAS.Web\SFA.DAS.EAS.Web.csproj">
-      <Project>{65DB60B1-80F0-432C-926E-7A6DD02A5645}</Project>
-      <Name>SFA.DAS.EAS.Web</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EAS.Application.csproj">
       <Project>{0226F97A-704E-49B0-A100-B75FEEC9C8AD}</Project>
       <Name>SFA.DAS.EAS.Application</Name>

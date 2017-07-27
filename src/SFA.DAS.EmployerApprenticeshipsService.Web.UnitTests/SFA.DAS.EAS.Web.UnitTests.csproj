@@ -268,10 +268,6 @@
       <Project>{01AC2BC2-AC01-400F-AB8F-548DD5C0EE74}</Project>
       <Name>SFA.DAS.EAS.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SFA.DAS.EAS.Web\SFA.DAS.EAS.Web.csproj">
-      <Project>{65DB60B1-80F0-432C-926E-7A6DD02A5645}</Project>
-      <Name>SFA.DAS.EAS.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
