@@ -92,7 +92,6 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
                             EnglishFraction = !randomEnglishFraction ? 1m : randomLevyDueYtd.Next(0, 99) / 100m,
                             PayrollDate = submissionDate,//TODO
                             SubmissionDate = submissionDate,
-                            TransactionItemType = 0,
                             EmpRef = empref.Empref,
                             EmprefAddedDate = empref.AddedDate,
                             EmprefRemovedDate = empref.RemovedDate,

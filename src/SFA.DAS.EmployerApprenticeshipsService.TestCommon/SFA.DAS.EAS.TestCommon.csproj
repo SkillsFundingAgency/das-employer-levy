@@ -162,7 +162,6 @@
     <Compile Include="ObjectMothers\EnglishFractionObjectMother.cs" />
     <Compile Include="ObjectMothers\MessageObjectMother.cs" />
     <Compile Include="ObjectMothers\RefreshEmployerLevyDataCommandObjectMother.cs" />
-    <Compile Include="ObjectMothers\TransactionLineObjectMother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenarioCommonSteps\LevyWorkerSteps.cs" />
   </ItemGroup>

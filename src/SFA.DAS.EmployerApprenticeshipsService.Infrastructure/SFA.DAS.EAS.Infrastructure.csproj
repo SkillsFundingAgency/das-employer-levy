@@ -223,7 +223,6 @@
     <Compile Include="ExecutionPolicies\IdamsExecutionPolicy.cs" />
     <Compile Include="ExecutionPolicies\PolicyNameAttribute.cs" />
     <Compile Include="ExecutionPolicies\RequiredPolicyAttribute.cs" />
-    <Compile Include="Mapping\Profiles\PaymentMappings.cs" />
     <Compile Include="Models\UserResponse.cs" />
     <Compile Include="DependencyResolution\ConfigurationPolicy.cs" />
     <Compile Include="DependencyResolution\LoggingPolicy.cs" />
@@ -235,8 +234,6 @@
     <Compile Include="Interfaces\REST\IRestClientFactory.cs" />
     <Compile Include="Interfaces\REST\IRestService.cs" />
     <Compile Include="Logging\LoggingConfig.cs" />
-    <Compile Include="Mapping\Profiles\ReferenceDataMappings.cs" />
-    <Compile Include="Mapping\Profiles\TransactionMappings.cs" />
     <Compile Include="Models\PostcodeAnywhere\PcaAddress.cs" />
     <Compile Include="Models\PostcodeAnywhere\PcaServiceFindResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

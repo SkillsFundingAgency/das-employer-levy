@@ -13,20 +13,16 @@ namespace SFA.DAS.EAS.LevyAccountUpdater.WebJob.Updater
     public class AccountUpdater : IAccountUpdater
     {
         private const string ServiceName = "SFA.DAS.EAS.LevyAccountUpdater";
-        private readonly IEmployerAccountRepository _accountRepository;
         private readonly IMessagePublisher _messagePublisher;
         private readonly ILog _logger;
-        private readonly IEmployerSchemesRepository _employerSchemesRepository;
-
+        
         [QueueName]
         public string get_employer_levy { get; set; }
 
-        public AccountUpdater(IEmployerAccountRepository accountRepository, IMessagePublisher messagePublisher, ILog logger, IEmployerSchemesRepository employerSchemesRepository)
+        public AccountUpdater(IMessagePublisher messagePublisher, ILog logger)
         {
-            _accountRepository = accountRepository;
             _messagePublisher = messagePublisher;
             _logger = logger;
-            _employerSchemesRepository = employerSchemesRepository;
         }
 
         public async Task RunUpdate()

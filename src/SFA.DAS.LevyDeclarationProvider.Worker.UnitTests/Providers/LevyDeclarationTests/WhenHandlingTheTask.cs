@@ -29,7 +29,6 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.UnitTests.Providers.LevyDec
         private Mock<IPollingMessageReceiver> _pollingMessageReceiver;
         private Mock<IMediator> _mediator;
         private Mock<ILog> _logger;
-        private Mock<IDasAccountService> _dasAccountService;
         private CancellationTokenSource _cancellationTokenSource;
 
         [SetUp]

@@ -27,9 +27,7 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.DependencyResolution
                 scan.AssembliesFromApplicationBaseDirectory(a => a.GetName().Name.StartsWith("SFA.DAS."));
                 scan.RegisterConcreteTypesAgainstTheFirstInterface();
             });
-
-            For<IUserRepository>().Use<UserRepository>();
-
+            
             For<IConfiguration>().Use<LevyDeclarationProviderConfiguration>();
 
             var config = ConfigurationHelper.GetConfiguration<EmployerApprenticeshipsServiceConfiguration>("SFA.DAS.EmployerApprenticeshipsService");

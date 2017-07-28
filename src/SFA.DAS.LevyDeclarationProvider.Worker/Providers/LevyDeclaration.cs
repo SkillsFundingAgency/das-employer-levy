@@ -28,8 +28,7 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
         private readonly IPollingMessageReceiver _pollingMessageReceiver;
         private readonly IMediator _mediator;
         private readonly ILog _logger;
-        private readonly IDasAccountService _dasAccountService;
-
+        
         private static bool HmrcProcessingEnabled => CloudConfigurationManager.GetSetting("DeclarationsEnabled")
                                       .Equals("both", StringComparison.CurrentCultureIgnoreCase);
 
@@ -39,13 +38,11 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
         private static bool FractionProcessingOnly => CloudConfigurationManager.GetSetting("DeclarationsEnabled")
             .Equals("fractions", StringComparison.CurrentCultureIgnoreCase);
 
-        public LevyDeclaration(IPollingMessageReceiver pollingMessageReceiver, IMediator mediator,
-            ILog logger, IDasAccountService dasAccountService)
+        public LevyDeclaration(IPollingMessageReceiver pollingMessageReceiver, IMediator mediator, ILog logger)
         {
             _pollingMessageReceiver = pollingMessageReceiver;
             _mediator = mediator;
             _logger = logger;
-            _dasAccountService = dasAccountService;
         }
 
         public async Task RunAsync(CancellationToken cancellationToken)
@@ -132,8 +129,6 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
                     EmployerReference = payeRef,
                     EnglishFractionUpdateResponse = englishFractionUpdateResponse
                 });
-
-                await _dasAccountService.UpdatePayeScheme(payeRef);
             }
 
             var levyDeclarationQueryResult = HmrcProcessingEnabled || DeclarationProcessingOnly ?

@@ -29,7 +29,6 @@ namespace SFA.DAS.EAS.TestCommon.DependencyResolution
                 scan.RegisterConcreteTypesAgainstTheFirstInterface();
             });
 
-            For<IUserRepository>().Use<UserRepository>();
             For<IConfiguration>().Use<LevyDeclarationProviderConfiguration>();
             For<IEventsApi>().Use(eventApi ?? Mock.Of<IEventsApi>()); 
             For<ILog>().Use(Mock.Of<ILog>());
