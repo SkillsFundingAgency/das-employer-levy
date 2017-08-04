@@ -85,6 +85,8 @@
     <Build Include="Tables\EnglishFractionOverride.sql" />
     <Build Include="Functions\CalculateSubmissionCutoffDate.sql" />
     <Build Include="StoredProcedures\GetLevyDeclarationSubmissionIdsByEmpRef.sql" />
+    <Build Include="Tables\PayeSchemes.sql" />
+    <Build Include="StoredProcedures\GetPayeSchemes.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SeedData\SeedData.sql" />
