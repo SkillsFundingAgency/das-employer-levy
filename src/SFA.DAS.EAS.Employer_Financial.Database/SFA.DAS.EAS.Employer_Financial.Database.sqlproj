@@ -66,7 +66,6 @@
     <Folder Include="StoredProcedures" />
     <Folder Include="Schemas" />
     <Folder Include="SeedData" />
-    <Folder Include="Types" />
     <Folder Include="Functions" />
   </ItemGroup>
   <ItemGroup>
@@ -80,26 +79,18 @@
     <Build Include="StoredProcedures\GetLevyDeclarations_ByAccountId.sql" />
     <Build Include="StoredProcedures\GetLastLevyDeclarations_ByEmpRef.sql" />
     <Build Include="StoredProcedures\ProcessDeclarationsTransactions.sql" />
-    <Build Include="StoredProcedures\GetTransactionLines_ByAccountId.sql" />
-    <Build Include="StoredProcedures\GetAccountBalance_ByAccountIds.sql" />
-    <Build Include="Types\AccountIds.sql" />
-    <Build Include="StoredProcedures\GetLatestPeriodEnd.sql" />
     <Build Include="StoredProcedures\GetLevyDetail_ByAccountIdAndDateRange.sql" />
     <Build Include="Tables\LevyDeclarationTopup.sql" />
     <Build Include="StoredProcedures\GetEnglishFraction_ByEmpRef.sql" />
     <Build Include="Tables\EnglishFractionCalculationDate.sql" />
     <Build Include="StoredProcedures\GetLevyDeclaration_ByEmpRefPayrollMonthPayrollYear.sql" />
     <Build Include="StoredProcedures\GetLevyDeclarations_ByAccountPayrollMonthPayrollYear.sql" />
-    <Build Include="StoredProcedures\GetPreviousTransactionsCount.sql" />
-    <Build Include="StoredProcedures\UpdateTransactionLineDate_BySubmissionId.sql" />
     <Build Include="Tables\LevyOverride.sql" />
     <Build Include="Views\GetLevyDeclaration.sql" />
     <Build Include="Tables\EnglishFractionOverride.sql" />
     <Build Include="StoredProcedures\GetCurrentFractionForScheme.sql" />
     <Build Include="Functions\CalculateSubmissionCutoffDate.sql" />
-    <Build Include="StoredProcedures\GetAccountPaymentIds.sql" />
     <Build Include="StoredProcedures\GetLevyDeclarationSubmissionIdsByEmpRef.sql" />
-    <Build Include="StoredProcedures\GetTransactionSummary_ByAccountId.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SeedData\SeedData.sql" />

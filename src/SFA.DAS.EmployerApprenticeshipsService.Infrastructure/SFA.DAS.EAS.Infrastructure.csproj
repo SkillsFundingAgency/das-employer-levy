@@ -210,14 +210,11 @@
     <Compile Include="Caching\InProcessCacheProvider.cs" />
     <Compile Include="Caching\RedisCache.cs" />
     <Compile Include="Caching\TaskSynchronizationScope.cs" />
-    <Compile Include="Data\AccountIdUserTableParam.cs" />
     <Compile Include="Data\EnglishFractionRepository.cs" />
     <Compile Include="Data\DasLevyRepository.cs" />
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="DependencyResolution\ConfigurationHelper.cs" />
-    <Compile Include="DependencyResolution\CurrentDatePolicy.cs" />
     <Compile Include="DependencyResolution\ExecutionPolicyPolicy.cs" />
-    <Compile Include="ExecutionPolicies\CompaniesHouseExecutionPolicy.cs" />
     <Compile Include="ExecutionPolicies\ExecutionPolicy.cs" />
     <Compile Include="ExecutionPolicies\HmrcExecutionPolicy.cs" />
     <Compile Include="ExecutionPolicies\IdamsExecutionPolicy.cs" />
@@ -225,14 +222,7 @@
     <Compile Include="ExecutionPolicies\RequiredPolicyAttribute.cs" />
     <Compile Include="Models\UserResponse.cs" />
     <Compile Include="DependencyResolution\ConfigurationPolicy.cs" />
-    <Compile Include="DependencyResolution\LoggingPolicy.cs" />
     <Compile Include="DependencyResolution\MessagePolicy.cs" />
-    <Compile Include="Entities\LevyAggregationEntity.cs" />
-    <Compile Include="Interfaces\REST\IRestServiceFactory.cs" />
-    <Compile Include="Factories\RestClientFactory.cs" />
-    <Compile Include="Factories\RestServiceFactory.cs" />
-    <Compile Include="Interfaces\REST\IRestClientFactory.cs" />
-    <Compile Include="Interfaces\REST\IRestService.cs" />
     <Compile Include="Logging\LoggingConfig.cs" />
     <Compile Include="Models\PostcodeAnywhere\PcaAddress.cs" />
     <Compile Include="Models\PostcodeAnywhere\PcaServiceFindResult.cs" />
@@ -246,11 +236,10 @@
     <Compile Include="Services\HmrcDateService.cs" />
     <Compile Include="Services\HmrcService.cs" />
     <Compile Include="Services\HttpClientWrapper.cs" />
-    <Compile Include="Services\RestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
-    <Folder Include="Interfaces\PostcodeAnywhere\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EAS.Application.csproj">

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Application.Commands.PublishGenericEvent;
-using SFA.DAS.EAS.Application.Events.ProcessDeclaration;
 using SFA.DAS.EAS.Application.Factories;
 using SFA.DAS.EAS.Application.Validation;
 using SFA.DAS.EAS.Domain.Data.Repositories;
@@ -18,22 +16,13 @@ namespace SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData
     {
         private readonly IValidator<RefreshEmployerLevyDataCommand> _validator;
         private readonly IDasLevyRepository _dasLevyRepository;
-        private readonly IMediator _mediator;
         private readonly IHmrcDateService _hmrcDateService;
-        private readonly ILevyEventFactory _levyEventFactory;
-        private readonly IGenericEventFactory _genericEventFactory;
-        private readonly IHashingService _hashingService;
-
-        public RefreshEmployerLevyDataCommandHandler(IValidator<RefreshEmployerLevyDataCommand> validator, IDasLevyRepository dasLevyRepository, IMediator mediator, IHmrcDateService hmrcDateService,
-            ILevyEventFactory levyEventFactory, IGenericEventFactory genericEventFactory, IHashingService hashingService)
+        
+        public RefreshEmployerLevyDataCommandHandler(IValidator<RefreshEmployerLevyDataCommand> validator, IDasLevyRepository dasLevyRepository, IHmrcDateService hmrcDateService)
         {
             _validator = validator;
             _dasLevyRepository = dasLevyRepository;
-            _mediator = mediator;
             _hmrcDateService = hmrcDateService;
-            _levyEventFactory = levyEventFactory;
-            _genericEventFactory = genericEventFactory;
-            _hashingService = hashingService;
         }
 
         protected override async Task HandleCore(RefreshEmployerLevyDataCommand message)
@@ -60,17 +49,18 @@ namespace SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData
 
                 if (!declarations.Any()) continue;
 
-                await _dasLevyRepository.CreateEmployerDeclarations(declarations, employerLevyData.EmpRef, message.AccountId);
+                await _dasLevyRepository.CreateEmployerDeclarations(declarations, employerLevyData.EmpRef);
 
                 updatedEmpRefs.Add(employerLevyData.EmpRef);
                 savedDeclarations.AddRange(declarations);
             }
 
-            if (savedDeclarations.Any())
+            // TODO: This needs to be published as a LevyDeclarationCreated message which transactions and rds can use
+            /* if (savedDeclarations.Any())
             {
                 await PublishProcessDeclarationEvents(message, updatedEmpRefs);
                 await PublishDeclarationUpdatedEvents(message.AccountId, savedDeclarations);
-            }
+            } */
         }
 
         private async Task ProcessEndOfYearAdjustmentDeclarations(IEnumerable<DasDeclaration> declarations, EmployerLevyData employerLevyData)
@@ -106,18 +96,6 @@ namespace SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData
             return declarations.Where(x => !IsSubmissionForFuturePeriod(x)).ToArray();
         }
 
-        private async Task PublishProcessDeclarationEvents(RefreshEmployerLevyDataCommand message, IEnumerable<string> updatedEmpRefs)
-        {
-            foreach (var empRef in updatedEmpRefs)
-            {
-                await _mediator.PublishAsync(new ProcessDeclarationsEvent
-                {
-                    AccountId = message.AccountId,
-                    EmpRef = empRef
-                });
-            }
-        }
-
         private bool DoesSubmissionPreDateTheLevy(DasDeclaration dasDeclaration)
         {
             return _hmrcDateService.DoesSubmissionPreDateLevy(dasDeclaration.PayrollYear);
@@ -138,31 +116,6 @@ namespace SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData
             var adjustmentDeclaration = await _dasLevyRepository.GetSubmissionByEmprefPayrollYearAndMonth(employerLevyData.EmpRef, dasDeclaration.PayrollYear, dasDeclaration.PayrollMonth.Value);
             dasDeclaration.EndOfYearAdjustment = true;
             dasDeclaration.EndOfYearAdjustmentAmount = adjustmentDeclaration?.LevyDueYtd - dasDeclaration.LevyDueYtd ?? 0;
-        }
-
-     
-
-        private async Task PublishDeclarationUpdatedEvents(long accountId, IEnumerable<DasDeclaration> savedDeclarations)
-        {
-            var hashedAccountId = _hashingService.HashValue(accountId);
-
-            var periodsChanged = savedDeclarations.Select(x =>
-                new
-                {
-                    x.PayrollYear,
-                    x.PayrollMonth
-                }).Distinct();
-
-            var tasks = periodsChanged.Select(x => CreateDeclarationUpdatedEvent(hashedAccountId, x.PayrollYear, x.PayrollMonth));
-            await Task.WhenAll(tasks);
-        }
-
-        private Task CreateDeclarationUpdatedEvent(string hashedAccountId, string payrollYear, short? payrollMonth)
-        {
-            var declarationUpdatedEvent = _levyEventFactory.CreateDeclarationUpdatedEvent(hashedAccountId, payrollYear, payrollMonth);
-            var genericEvent = _genericEventFactory.Create(declarationUpdatedEvent);
-
-            return _mediator.SendAsync(new PublishGenericEventCommand { Event = genericEvent });
         }
     }
 }

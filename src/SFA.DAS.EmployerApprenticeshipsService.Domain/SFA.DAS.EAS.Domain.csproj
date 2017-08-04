@@ -142,7 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\IUnitOfWork.cs" />
-    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Data\Repositories\IPayeSchemesRepository.cs" />
     <Compile Include="Http\InternalServerErrorException.cs" />
     <Compile Include="Http\RequestTimeOutException.cs" />
     <Compile Include="Interfaces\IAzureAdAuthenticationService.cs" />
@@ -152,6 +152,7 @@
     <Compile Include="Http\ResourceNotFoundException.cs" />
     <Compile Include="Http\ServiceUnavailableException.cs" />
     <Compile Include="Http\TooManyRequestsException.cs" />
+    <Compile Include="Interfaces\IHashingService.cs" />
     <Compile Include="Interfaces\IHmrcDateService.cs" />
     <Compile Include="Configuration\TokenServiceApiClientConfiguration.cs" />
     <Compile Include="Attributes\QueueNameAttribute.cs" />
@@ -165,13 +166,11 @@
     <Compile Include="Configuration\EventsApiClientConfiguration.cs" />
     <Compile Include="Data\Repositories\IEnglishFractionRepository.cs" />
     <Compile Include="Data\Repositories\IDasLevyRepository.cs" />
-    <Compile Include="Extensions\NullableDateTimeExtension.cs" />
     <Compile Include="Interfaces\IAuditService.cs" />
     <Compile Include="Interfaces\ICache.cs" />
     <Compile Include="Interfaces\IDasLevyService.cs" />
     <Compile Include="Interfaces\IConfiguration.cs" />
     <Compile Include="Interfaces\IEmpRefFileBasedService.cs" />
-    <Compile Include="Interfaces\IHashingService.cs" />
     <Compile Include="Interfaces\IHmrcService.cs" />
     <Compile Include="Http\IHttpClientWrapper.cs" />
     <Compile Include="Models\Levy\LevyDeclarationView.cs" />
@@ -204,9 +203,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

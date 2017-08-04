@@ -69,7 +69,7 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
                 }
                 catch (Exception ex)
                 {
-                    _logger.Fatal(ex, $"Levy declaration processing failed for account with ID [{message?.Content?.AccountId}]");
+                    _logger.Fatal(ex, $"Levy declaration processing failed for paye scheme [{message?.Content?.PayeRef}]");
                     break; //Stop processing anymore messages as this failure needs to be investigated
                 }
             }
@@ -87,16 +87,14 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
             }
             var timer = Stopwatch.StartNew();
 
-            var employerAccountId = message.Content.AccountId;
             var payeRef = message.Content.PayeRef;
 
-            _logger.Trace($"Processing LevyDeclaration for {employerAccountId} paye scheme {payeRef}");
+            _logger.Trace($"Processing LevyDeclaration for paye scheme {payeRef}");
             
             var employerDataList = new List<EmployerLevyData>();
 
             var englishFractionUpdateResponse = await _mediator.SendAsync(new GetEnglishFractionUpdateRequiredRequest());
 
-            
             await ProcessScheme(payeRef, englishFractionUpdateResponse, employerDataList);
             
 
@@ -110,14 +108,13 @@ namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
             
             await _mediator.SendAsync(new RefreshEmployerLevyDataCommand
             {
-                AccountId = employerAccountId,
                 EmployerLevyData = employerDataList
             });
             
             await message.CompleteAsync();
 
             timer.Stop();
-            _logger.Trace($"Finished processing LevyDeclaration for {employerAccountId} paye scheme {payeRef}. Completed in {timer.Elapsed:g} (hh:mm:ss:ms)");
+            _logger.Trace($"Finished processing LevyDeclaration for paye scheme {payeRef}. Completed in {timer.Elapsed:g} (hh:mm:ss:ms)");
         }
 
         private async Task ProcessScheme(string payeRef, GetEnglishFractionUpdateRequiredResponse englishFractionUpdateResponse, ICollection<EmployerLevyData> employerDataList)

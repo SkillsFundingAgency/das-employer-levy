@@ -149,7 +149,6 @@
     <Compile Include="Commands\AuditCommandTests\WhenIProcessTheCommand.cs" />
     <Compile Include="Commands\AuditCommandTests\WhenIValidateTheCommand.cs" />
     <Compile Include="Commands\UpdateEnglishFractions\WhenISendTheUpdateEnglishFractionsCommand.cs" />
-    <Compile Include="Events\ProcessDeclarationTests\WhenIProcessDeclarations.cs" />
     <Compile Include="Factories\LevyEventFactoryTests\WhenICreateAnEvent.cs" />
     <Compile Include="FakeTimeProvider.cs" />
     <Compile Include="Commands\RefreshEmployerLevyDataTests\WhenIReceiveTheCommand.cs" />

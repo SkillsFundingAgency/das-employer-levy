@@ -14,7 +14,6 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
 
             var refreshEmployerLevyDataCommand = new RefreshEmployerLevyDataCommand
             {
-                AccountId = accountId,
                 EmployerLevyData = new List<EmployerLevyData> {
                     new EmployerLevyData
                 {
@@ -62,7 +61,6 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
         {
             var refreshEmployerLevyDataCommand = new RefreshEmployerLevyDataCommand
             {
-                AccountId = accountId,
                 EmployerLevyData = new List<EmployerLevyData> {
                     new EmployerLevyData
                 {
@@ -127,7 +125,6 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
         {
             var refreshEmployerLevyDataCommand = new RefreshEmployerLevyDataCommand
             {
-                AccountId = accountId,
                 EmployerLevyData = new List<EmployerLevyData> {
                     new EmployerLevyData
                 {
@@ -156,11 +153,10 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
             return refreshEmployerLevyDataCommand;
         }
 
-        public static RefreshEmployerLevyDataCommand CreateLevyDataWithMultiplePeriods(long accountId, DateTime submissionStartDate)
+        public static RefreshEmployerLevyDataCommand CreateLevyDataWithMultiplePeriods(DateTime submissionStartDate)
         {
             var refreshEmployerLevyDataCommand = new RefreshEmployerLevyDataCommand
             {
-                AccountId = accountId,
                 EmployerLevyData = new List<EmployerLevyData> {
                     new EmployerLevyData
                     {

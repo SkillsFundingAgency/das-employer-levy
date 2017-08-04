@@ -54,7 +54,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
             return result.ToList();
         }
 
-        public async Task CreateEmployerDeclarations(IEnumerable<DasDeclaration> declarations, string empRef, long accountId)
+        public async Task CreateEmployerDeclarations(IEnumerable<DasDeclaration> declarations, string empRef)
         {
             using (var connection = new SqlConnection(_configuration.DatabaseConnectionString))
             {
@@ -69,7 +69,6 @@ namespace SFA.DAS.EAS.Infrastructure.Data
                             var parameters = new DynamicParameters();
                             parameters.Add("@LevyDueYtd", dasDeclaration.LevyDueYtd, DbType.Decimal);
                             parameters.Add("@LevyAllowanceForYear", dasDeclaration.LevyAllowanceForFullYear, DbType.Decimal);
-                            parameters.Add("@AccountId", accountId, DbType.Int64);
                             parameters.Add("@EmpRef", empRef, DbType.String);
                             parameters.Add("@PayrollYear", dasDeclaration.PayrollYear, DbType.String);
                             parameters.Add("@PayrollMonth", dasDeclaration.PayrollMonth, DbType.Int16);

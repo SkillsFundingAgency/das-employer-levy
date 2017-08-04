@@ -39,17 +39,15 @@ namespace SFA.DAS.EAS.TestCommon.ScenarioCommonSteps
 
         public void RunWorker(IEnumerable<GetHMRCLevyDeclarationResponse> hmrcLevyResponses)
         {
-            var hashingService = _container.GetInstance<IHashingService>();
             var levyDeclaration = _container.GetInstance<ILevyDeclaration>();
             var levyDeclarationResponses = hmrcLevyResponses as GetHMRCLevyDeclarationResponse[] ?? hmrcLevyResponses.ToArray();
 
             var cancellationTokenSource = new CancellationTokenSource();
 
-            var accountId = GetCurrentAccountId(hashingService);
-
+            
             var payeSchemes = levyDeclarationResponses.Select(x => x.Empref).Distinct();
 
-            SetupRefreshLevyMockMessageQueue(payeSchemes, accountId, cancellationTokenSource);
+            SetupRefreshLevyMockMessageQueue(payeSchemes, cancellationTokenSource);
 
             foreach (var declarationResponse in levyDeclarationResponses)
             {
@@ -60,15 +58,7 @@ namespace SFA.DAS.EAS.TestCommon.ScenarioCommonSteps
             levyDeclaration.RunAsync(cancellationTokenSource.Token).Wait(5000);
         }
 
-        private static long GetCurrentAccountId(IHashingService hashingService)
-        {
-            var hashedAccountId = ScenarioContext.Current["HashedAccountId"] as string;
-            var accountId = hashingService.DecodeValue(hashedAccountId);
-            return accountId;
-        }
-
-        private void SetupRefreshLevyMockMessageQueue(IEnumerable<string> payeSchemes, long accountId,
-            CancellationTokenSource cancellationTokenSource)
+        private void SetupRefreshLevyMockMessageQueue(IEnumerable<string> payeSchemes, CancellationTokenSource cancellationTokenSource)
         {
             var setupSequence = _messageReceiver.SetupSequence(x => x.ReceiveAsAsync<EmployerRefreshLevyQueueMessage>());
 
@@ -76,7 +66,6 @@ namespace SFA.DAS.EAS.TestCommon.ScenarioCommonSteps
             {
                 var queueMessage = new EmployerRefreshLevyQueueMessage
                 {
-                    AccountId = accountId,
                     PayeRef = scheme
                 };
 

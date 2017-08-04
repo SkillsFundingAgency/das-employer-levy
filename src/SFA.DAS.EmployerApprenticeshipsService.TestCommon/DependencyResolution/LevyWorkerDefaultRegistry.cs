@@ -48,10 +48,6 @@ namespace SFA.DAS.EAS.TestCommon.DependencyResolution
         private void RegisterExecutionPolicies()
         {
             For<Infrastructure.ExecutionPolicies.ExecutionPolicy>()
-                .Use<Infrastructure.ExecutionPolicies.CompaniesHouseExecutionPolicy>()
-                .Named(Infrastructure.ExecutionPolicies.CompaniesHouseExecutionPolicy.Name);
-
-            For<Infrastructure.ExecutionPolicies.ExecutionPolicy>()
                 .Use<Infrastructure.ExecutionPolicies.HmrcExecutionPolicy>()
                 .Named(Infrastructure.ExecutionPolicies.HmrcExecutionPolicy.Name);
 
