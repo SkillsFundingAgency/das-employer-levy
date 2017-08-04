@@ -1,6 +1,6 @@
 ﻿using SFA.DAS.EAS.Account.Api.Types.Events.Levy;
 
-namespace SFA.DAS.EAS.Application.Factories
+namespace SFA.DAS.EmployerLevy.Application.Factories
 {
     public interface ILevyEventFactory
     {

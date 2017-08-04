@@ -1,6 +1,6 @@
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
 
-namespace SFA.DAS.EAS.Application.Queries.GetGatewayToken
+namespace SFA.DAS.EmployerLevy.Application.Queries.GetGatewayToken
 {
     public class GetGatewayTokenQueryResponse
     {

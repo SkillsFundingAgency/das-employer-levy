@@ -1,6 +1,6 @@
-﻿using SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration;
+﻿using SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration;
 
-namespace SFA.DAS.EAS.TestCommon.ObjectMothers
+namespace SFA.DAS.EmployerLevy.TestCommon.ObjectMothers
 {
     public static class GetHMRCLevyDeclarationResponseObjectMother
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace SFA.DAS.EAS.Application.Commands.CreateEnglishFractionCalculationDate
+namespace SFA.DAS.EmployerLevy.Application.Commands.CreateEnglishFractionCalculationDate
 {
     public class CreateEnglishFractionCalculationDateCommand : IAsyncRequest
     {

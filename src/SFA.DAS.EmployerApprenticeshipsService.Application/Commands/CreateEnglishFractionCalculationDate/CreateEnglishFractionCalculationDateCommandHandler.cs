@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.Application.Commands.CreateEnglishFractionCalculationDate
+namespace SFA.DAS.EmployerLevy.Application.Commands.CreateEnglishFractionCalculationDate
 {
     public class CreateEnglishFractionCalculationDateCommandHandler : AsyncRequestHandler<CreateEnglishFractionCalculationDateCommand>
     {

@@ -2,14 +2,14 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading;
 using Microsoft.WindowsAzure.ServiceRuntime;
-using SFA.DAS.EAS.Domain.Configuration;
-using SFA.DAS.EAS.Infrastructure.DependencyResolution;
-using SFA.DAS.EAS.Infrastructure.Logging;
-using SFA.DAS.EAS.LevyDeclarationProvider.Worker.DependencyResolution;
-using SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers;
+using SFA.DAS.EmployerLevy.Domain.Configuration;
+using SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution;
+using SFA.DAS.EmployerLevy.Infrastructure.Logging;
+using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResolution;
+using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers;
 using StructureMap;
 
-namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker
+namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker
 {
     public class WorkerRole : RoleEntryPoint
     {

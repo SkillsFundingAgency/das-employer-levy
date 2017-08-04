@@ -6,11 +6,11 @@ using Moq;
 using NUnit.Framework;
 using SFA.DAS.Audit.Client;
 using SFA.DAS.Audit.Types;
-using SFA.DAS.EAS.Domain.Models.Audit;
-using SFA.DAS.EAS.Infrastructure.Services;
+using SFA.DAS.EmployerLevy.Domain.Models.Audit;
+using SFA.DAS.EmployerLevy.Infrastructure.Services;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.Infrastructure.UnitTests.Services.AuditServiceTests
+namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.AuditServiceTests
 {
     public class WhenISendAnAuditMessage
     {

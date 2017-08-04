@@ -7,8 +7,8 @@
     <ProjectGuid>{0226F97A-704E-49B0-A100-B75FEEC9C8AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SFA.DAS.EAS.Application</RootNamespace>
-    <AssemblyName>SFA.DAS.EAS.Application</AssemblyName>
+    <RootNamespace>SFA.DAS.EmployerLevy.Application</RootNamespace>
+    <AssemblyName>SFA.DAS.EmployerLevy.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -201,9 +201,9 @@
     <Compile Include="Validation\ValidationResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Domain\SFA.DAS.EAS.Domain.csproj">
+    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Domain\SFA.DAS.EmployerLevy.Domain.csproj">
       <Project>{EC415CDA-9294-4967-BD27-AA900985427D}</Project>
-      <Name>SFA.DAS.EAS.Domain</Name>
+      <Name>SFA.DAS.EmployerLevy.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

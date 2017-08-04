@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration
+namespace SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration
 {
     public class GetLastLevyDeclarationQuery : IAsyncRequest<GetLastLevyDeclarationResponse>
     {

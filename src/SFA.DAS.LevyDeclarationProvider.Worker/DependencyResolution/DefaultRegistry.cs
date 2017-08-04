@@ -3,19 +3,17 @@ using System.Linq;
 using System.Reflection;
 using AutoMapper;
 using MediatR;
-using SFA.DAS.EAS.Domain.Configuration;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Infrastructure.Data;
-using SFA.DAS.EAS.Infrastructure.DependencyResolution;
+using SFA.DAS.EmployerLevy.Domain.Configuration;
+using SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution;
 using SFA.DAS.Events.Api.Client;
 using SFA.DAS.Events.Api.Client.Configuration;
+using SFA.DAS.NLog.Logger;
 using StructureMap;
 using StructureMap.Graph;
 using WebGrease.Css.Extensions;
-using IConfiguration = SFA.DAS.EAS.Domain.Interfaces.IConfiguration;
-using SFA.DAS.NLog.Logger;
+using IConfiguration = SFA.DAS.EmployerLevy.Domain.Interfaces.IConfiguration;
 
-namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.DependencyResolution
+namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResolution
 {
     public class DefaultRegistry : Registry
     {

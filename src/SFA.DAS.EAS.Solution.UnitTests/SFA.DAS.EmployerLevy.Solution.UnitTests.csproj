@@ -7,8 +7,8 @@
     <ProjectGuid>{25AB0549-E867-4797-B7D3-FE8A7D6E17F6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SFA.DAS.EAS.Solution.UnitTests</RootNamespace>
-    <AssemblyName>SFA.DAS.EAS.Solution.UnitTests</AssemblyName>
+    <RootNamespace>SFA.DAS.EmployerLevy.Solution.UnitTests</RootNamespace>
+    <AssemblyName>SFA.DAS.EmployerLevy.Solution.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

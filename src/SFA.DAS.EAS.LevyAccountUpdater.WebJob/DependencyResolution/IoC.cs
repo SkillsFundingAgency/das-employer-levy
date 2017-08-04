@@ -16,11 +16,11 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-using SFA.DAS.EAS.Domain.Configuration;
-using SFA.DAS.EAS.Infrastructure.DependencyResolution;
+using SFA.DAS.EmployerLevy.Domain.Configuration;
+using SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution;
 using StructureMap;
 
-namespace SFA.DAS.EAS.LevyAccountUpdater.WebJob.DependencyResolution {
+namespace SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.DependencyResolution {
     public static class IoC
     {
         private const string ServiceName = "SFA.DAS.EmployerApprenticeshipsService";

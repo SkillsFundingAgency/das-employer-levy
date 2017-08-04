@@ -2,12 +2,12 @@
 using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Queries.GetLastLevyDeclarationsTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Queries.GetLastLevyDeclarationsTests
 {
     public class WhenIGetLevyDeclarations : QueryBaseTest<GetLastLevyDeclarationQueryHandler, GetLastLevyDeclarationQuery, GetLastLevyDeclarationResponse>
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 
-namespace SFA.DAS.EAS.TestCommon.ObjectMothers
+namespace SFA.DAS.EmployerLevy.TestCommon.ObjectMothers
 {
     public static class LevyDeclarationSourceDataObjectMother
     {

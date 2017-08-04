@@ -1,4 +1,4 @@
-﻿namespace SFA.DAS.EAS.Domain.Configuration
+﻿namespace SFA.DAS.EmployerLevy.Domain.Configuration
 {
     public class HmrcConfiguration
     {

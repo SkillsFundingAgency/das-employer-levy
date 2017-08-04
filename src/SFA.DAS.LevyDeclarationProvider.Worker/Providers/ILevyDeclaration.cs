@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
+namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
     internal interface ILevyDeclaration
     {

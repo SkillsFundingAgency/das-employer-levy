@@ -2,11 +2,11 @@
 using System.Data;
 using System.Threading.Tasks;
 using Dapper;
-using SFA.DAS.EAS.Domain.Configuration;
-using SFA.DAS.Sql.Client;
+using SFA.DAS.EmployerLevy.Domain.Configuration;
 using SFA.DAS.NLog.Logger;
+using SFA.DAS.Sql.Client;
 
-namespace SFA.DAS.EAS.TestCommon.DbCleanup
+namespace SFA.DAS.EmployerLevy.TestCommon.DbCleanup
 {
     public class UpdateTransactionLine : BaseRepository, IUpdateTransactionLine
     {

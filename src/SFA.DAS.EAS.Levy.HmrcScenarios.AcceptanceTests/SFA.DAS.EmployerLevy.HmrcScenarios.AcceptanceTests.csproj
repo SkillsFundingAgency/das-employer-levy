@@ -7,8 +7,8 @@
     <ProjectGuid>{4F4834B9-83CD-4F67-B6D9-12B691F801D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SFA.DAS.EAS.Levy.HmrcScenarios.AcceptanceTests2</RootNamespace>
-    <AssemblyName>SFA.DAS.EAS.Levy.HmrcScenarios.AcceptanceTests2</AssemblyName>
+    <RootNamespace>SFA.DAS.EmployerLevy.HmrcScenarios.AcceptanceTests</RootNamespace>
+    <AssemblyName>SFA.DAS.EmployerLevy.HmrcScenarios.AcceptanceTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -202,17 +202,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EAS.Application.csproj">
+    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EmployerLevy.Application.csproj">
       <Project>{0226F97A-704E-49B0-A100-B75FEEC9C8AD}</Project>
-      <Name>SFA.DAS.EAS.Application</Name>
+      <Name>SFA.DAS.EmployerLevy.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Domain\SFA.DAS.EAS.Domain.csproj">
+    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Domain\SFA.DAS.EmployerLevy.Domain.csproj">
       <Project>{EC415CDA-9294-4967-BD27-AA900985427D}</Project>
-      <Name>SFA.DAS.EAS.Domain</Name>
+      <Name>SFA.DAS.EmployerLevy.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.TestCommon\SFA.DAS.EAS.TestCommon.csproj">
+    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.TestCommon\SFA.DAS.EmployerLevy.TestCommon.csproj">
       <Project>{05D7C094-E2C9-4CCD-B0D7-85D263254B26}</Project>
-      <Name>SFA.DAS.EAS.TestCommon</Name>
+      <Name>SFA.DAS.EmployerLevy.TestCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

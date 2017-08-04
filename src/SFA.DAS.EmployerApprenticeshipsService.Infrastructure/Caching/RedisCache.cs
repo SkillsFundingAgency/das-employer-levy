@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using Microsoft.Azure;
 using Newtonsoft.Json;
-using SFA.DAS.EAS.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
 using StackExchange.Redis;
 
-namespace SFA.DAS.EAS.Infrastructure.Caching
+namespace SFA.DAS.EmployerLevy.Infrastructure.Caching
 {
     public class RedisCache : ICache
     {

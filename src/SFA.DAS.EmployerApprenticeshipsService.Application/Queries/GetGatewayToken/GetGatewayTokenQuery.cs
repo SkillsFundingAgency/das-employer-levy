@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace SFA.DAS.EAS.Application.Queries.GetGatewayToken
+namespace SFA.DAS.EmployerLevy.Application.Queries.GetGatewayToken
 {
     public class GetGatewayTokenQuery : IAsyncRequest<GetGatewayTokenQueryResponse>
     {

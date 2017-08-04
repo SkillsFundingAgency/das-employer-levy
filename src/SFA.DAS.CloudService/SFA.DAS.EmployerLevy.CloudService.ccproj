@@ -11,7 +11,7 @@
     <RootNamespace>SFA.DAS.EmployerApprenticeshipsService</RootNamespace>
     <AssemblyName>SFA.DAS.EmployerApprenticeshipsService</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
-    <Name>SFA.DAS.CloudService</Name>
+    <Name>SFA.DAS.EmployerLevy.CloudService</Name>
     <PackageEnableRemoteDebugger>False</PackageEnableRemoteDebugger>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

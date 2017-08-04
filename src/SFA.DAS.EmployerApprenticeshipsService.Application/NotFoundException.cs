@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SFA.DAS.EAS.Application
+namespace SFA.DAS.EmployerLevy.Application
 {
     public class NotFoundException : Exception
     {

@@ -4,20 +4,18 @@ using System.Reflection;
 using AutoMapper;
 using MediatR;
 using Moq;
-using SFA.DAS.EAS.Domain.Configuration;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Infrastructure.Data;
-using SFA.DAS.EAS.Infrastructure.Services;
+using SFA.DAS.EmployerLevy.Domain.Configuration;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Infrastructure.Services;
 using SFA.DAS.Events.Api.Client;
 using SFA.DAS.Messaging;
 using SFA.DAS.NLog.Logger;
 using StructureMap;
 using StructureMap.Graph;
 using WebGrease.Css.Extensions;
-using IConfiguration = SFA.DAS.EAS.Domain.Interfaces.IConfiguration;
+using IConfiguration = SFA.DAS.EmployerLevy.Domain.Interfaces.IConfiguration;
 
-namespace SFA.DAS.EAS.TestCommon.DependencyResolution
+namespace SFA.DAS.EmployerLevy.TestCommon.DependencyResolution
 {
     public class LevyWorkerDefaultRegistry : Registry
     {

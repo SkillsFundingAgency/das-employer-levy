@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Messages;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.LevyAccountUpdater.WebJob.Updater;
+using SFA.DAS.EmployerLevy.Application.Messages;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.Updater;
 using SFA.DAS.Messaging;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.LevyAccountUpdater.UnitTests
+namespace SFA.DAS.EmployerLevy.LevyAccountUpdater.UnitTests
 {
     public class WhenIUpdateAccounts
     {

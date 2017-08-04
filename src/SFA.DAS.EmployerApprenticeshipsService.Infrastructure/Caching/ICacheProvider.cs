@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SFA.DAS.EAS.Infrastructure.Caching
+namespace SFA.DAS.EmployerLevy.Infrastructure.Caching
 {
     public interface ICacheProvider
     {

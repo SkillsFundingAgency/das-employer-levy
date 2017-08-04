@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using MediatR;
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
 
-namespace SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData
+namespace SFA.DAS.EmployerLevy.Application.Commands.RefreshEmployerLevyData
 {
     public class RefreshEmployerLevyDataCommand : IAsyncRequest
     {

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Application.Factories;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 
-namespace SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData
+namespace SFA.DAS.EmployerLevy.Application.Commands.RefreshEmployerLevyData
 {
     public class RefreshEmployerLevyDataCommandHandler : AsyncRequestHandler<RefreshEmployerLevyDataCommand>
     {

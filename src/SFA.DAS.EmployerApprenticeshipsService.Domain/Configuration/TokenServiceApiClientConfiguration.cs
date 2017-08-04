@@ -1,9 +1,9 @@
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Azure;
-using SFA.DAS.EAS.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
 using SFA.DAS.TokenService.Api.Client;
 
-namespace SFA.DAS.EAS.Domain.Configuration
+namespace SFA.DAS.EmployerLevy.Domain.Configuration
 {
     public class TokenServiceApiClientConfiguration : ITokenServiceApiClientConfiguration, IConfiguration
     {

@@ -6,10 +6,10 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SFA.DAS.EAS.Domain.Http;
+using SFA.DAS.EmployerLevy.Domain.Http;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.Infrastructure.Services
+namespace SFA.DAS.EmployerLevy.Infrastructure.Services
 {
     public class HttpClientWrapper : IHttpClientWrapper
     {

@@ -1,8 +1,8 @@
-﻿using SFA.DAS.EAS.Infrastructure.Logging;
-using SFA.DAS.EAS.LevyAccountUpdater.WebJob.DependencyResolution;
-using SFA.DAS.EAS.LevyAccountUpdater.WebJob.Updater;
+﻿using SFA.DAS.EmployerLevy.Infrastructure.Logging;
+using SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.DependencyResolution;
+using SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.Updater;
 
-namespace SFA.DAS.EAS.LevyAccountUpdater.WebJob
+namespace SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob
 {
     class Program
     {

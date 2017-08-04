@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Xml.Linq;
 using NUnit.Framework;
 
-namespace SFA.DAS.EAS.Solution.UnitTests.ConfigTests
+namespace SFA.DAS.EmployerLevy.Solution.UnitTests.ConfigTests
 {
     public class WhenTransformingConfigFiles
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
-using SFA.DAS.EAS.Infrastructure.Services;
+using SFA.DAS.EmployerLevy.Infrastructure.Services;
 
-namespace SFA.DAS.EAS.Infrastructure.UnitTests.Services.HmrcDateServiceTests
+namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.HmrcDateServiceTests
 {
     public class WhenICompareTheSubmissionDateToPayrolDate
     {

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace SFA.DAS.EAS.TestCommon.DbCleanup
+namespace SFA.DAS.EmployerLevy.TestCommon.DbCleanup
 {
     public interface ICleanDatabase
     {

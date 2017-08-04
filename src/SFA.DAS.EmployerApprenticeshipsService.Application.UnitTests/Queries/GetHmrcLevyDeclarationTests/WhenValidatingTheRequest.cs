@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration;
+using SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Queries.GetHmrcLevyDeclarationTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Queries.GetHmrcLevyDeclarationTests
 {
     public class WhenValidatingTheRequest
     {

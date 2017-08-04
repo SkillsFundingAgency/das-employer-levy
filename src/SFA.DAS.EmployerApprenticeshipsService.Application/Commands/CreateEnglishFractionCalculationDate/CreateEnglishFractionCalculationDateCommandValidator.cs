@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using SFA.DAS.EAS.Application.Validation;
+using SFA.DAS.EmployerLevy.Application.Validation;
 
-namespace SFA.DAS.EAS.Application.Commands.CreateEnglishFractionCalculationDate
+namespace SFA.DAS.EmployerLevy.Application.Commands.CreateEnglishFractionCalculationDate
 {
     public class CreateEnglishFractionCalculationDateCommandValidator : IValidator<CreateEnglishFractionCalculationDateCommand>
     {

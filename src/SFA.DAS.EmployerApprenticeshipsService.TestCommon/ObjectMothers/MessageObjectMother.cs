@@ -1,8 +1,8 @@
 ﻿using System;
-using SFA.DAS.EAS.TestCommon.MockModels;
+using SFA.DAS.EmployerLevy.TestCommon.MockModels;
 using SFA.DAS.Messaging;
 
-namespace SFA.DAS.EAS.TestCommon.ObjectMothers
+namespace SFA.DAS.EmployerLevy.TestCommon.ObjectMothers
 {
     public class MessageObjectMother
     {

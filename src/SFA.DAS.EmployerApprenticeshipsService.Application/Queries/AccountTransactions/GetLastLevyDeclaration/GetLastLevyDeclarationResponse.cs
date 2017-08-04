@@ -1,7 +1,6 @@
-using System.Collections.Generic;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 
-namespace SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration
+namespace SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration
 {
     public class GetLastLevyDeclarationResponse
     {

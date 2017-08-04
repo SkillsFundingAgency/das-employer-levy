@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SFA.DAS.EAS.Domain.Models.HmrcLevy
+namespace SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy
 {
     public class EmpRefLevyInformation
     {

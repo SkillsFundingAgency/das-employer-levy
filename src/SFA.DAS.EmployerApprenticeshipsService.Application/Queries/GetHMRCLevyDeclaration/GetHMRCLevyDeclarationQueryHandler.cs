@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
 
-namespace SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration
+namespace SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration
 {
     public class GetHMRCLevyDeclarationQueryHandler : IAsyncRequestHandler<GetHMRCLevyDeclarationQuery,GetHMRCLevyDeclarationResponse>
     {

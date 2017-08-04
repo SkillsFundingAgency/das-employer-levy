@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
 
-namespace SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration
+namespace SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration
 {
     public class GetLastLevyDeclarationQueryHandler : IAsyncRequestHandler<GetLastLevyDeclarationQuery, GetLastLevyDeclarationResponse>
     {

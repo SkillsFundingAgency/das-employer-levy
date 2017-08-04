@@ -1,4 +1,4 @@
-﻿namespace SFA.DAS.EAS.Application.Commands.PublishGenericEvent
+﻿namespace SFA.DAS.EmployerLevy.Application.Commands.PublishGenericEvent
 {
     public class PublishGenericEventCommandResponse
     {

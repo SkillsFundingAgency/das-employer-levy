@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SFA.DAS.Audit.Client;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.Audit;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.Audit;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.Infrastructure.Services
+namespace SFA.DAS.EmployerLevy.Infrastructure.Services
 {
     public class AuditService : IAuditService
     {

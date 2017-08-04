@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using SFA.DAS.Events.Api.Types;
 
-namespace SFA.DAS.EAS.Application.Factories
+namespace SFA.DAS.EmployerLevy.Application.Factories
 {
     public class GenericEventFactory : IGenericEventFactory
     {

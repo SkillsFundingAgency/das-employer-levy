@@ -1,7 +1,7 @@
-using SFA.DAS.EAS.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
 using SFA.DAS.Notifications.Api.Client.Configuration;
 
-namespace SFA.DAS.EAS.Domain.Configuration
+namespace SFA.DAS.EmployerLevy.Domain.Configuration
 {
     public class NotificationsApiClientConfiguration : INotificationsApiClientConfiguration, IConfiguration
     {

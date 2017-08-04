@@ -2,7 +2,7 @@
 using System.Data;
 using System.Threading.Tasks;
 
-namespace SFA.DAS.EAS.Domain.Data
+namespace SFA.DAS.EmployerLevy.Domain.Data
 {
     public interface IUnitOfWork : IDisposable
     {

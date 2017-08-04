@@ -1,10 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
 
-namespace SFA.DAS.EAS.Application.Queries.GetEnglishFractionUpdateRequired
+namespace SFA.DAS.EmployerLevy.Application.Queries.GetEnglishFractionUpdateRequired
 {
     public class GetEnglishFractionsUpdateRequiredQueryHandler : IAsyncRequestHandler<GetEnglishFractionUpdateRequiredRequest, GetEnglishFractionUpdateRequiredResponse>
     {

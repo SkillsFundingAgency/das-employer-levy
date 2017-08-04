@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
+using SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Queries.GetLastLevyDeclarationsTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Queries.GetLastLevyDeclarationsTests
 {
     class WhenIValidateTheRequest
     {

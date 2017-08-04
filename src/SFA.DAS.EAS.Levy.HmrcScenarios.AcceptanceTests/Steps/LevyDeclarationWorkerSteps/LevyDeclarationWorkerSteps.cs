@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration;
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
-using SFA.DAS.EAS.TestCommon.ScenarioCommonSteps;
+using SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.TestCommon.ScenarioCommonSteps;
 using TechTalk.SpecFlow;
 
-namespace SFA.DAS.EAS.Levy.HmrcScenarios.AcceptanceTests2.Steps.LevyDeclarationWorkerSteps
+namespace SFA.DAS.EmployerLevy.HmrcScenarios.AcceptanceTests.Steps.LevyDeclarationWorkerSteps
 {
     [Binding]
     public class LevyDeclarationWorkerSteps

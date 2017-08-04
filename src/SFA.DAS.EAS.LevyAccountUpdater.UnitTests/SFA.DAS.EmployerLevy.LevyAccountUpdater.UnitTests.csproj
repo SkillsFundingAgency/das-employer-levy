@@ -7,8 +7,8 @@
     <ProjectGuid>{604152AB-9AB4-4A97-9A09-131F6C040CFD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SFA.DAS.EAS.LevyAccountUpdater.UnitTests</RootNamespace>
-    <AssemblyName>SFA.DAS.EAS.LevyAccountUpdater.UnitTests</AssemblyName>
+    <RootNamespace>SFA.DAS.EmployerLevy.LevyAccountUpdater.UnitTests</RootNamespace>
+    <AssemblyName>SFA.DAS.EmployerLevy.LevyAccountUpdater.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -79,17 +79,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.EAS.LevyAccountUpdater.WebJob\SFA.DAS.EAS.LevyAccountUpdater.WebJob.csproj">
+    <ProjectReference Include="..\SFA.DAS.EAS.LevyAccountUpdater.WebJob\SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.csproj">
       <Project>{7220FB76-1DDB-4F58-9D67-F073CD6BBA02}</Project>
-      <Name>SFA.DAS.EAS.LevyAccountUpdater.WebJob</Name>
+      <Name>SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EAS.Application.csproj">
+    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EmployerLevy.Application.csproj">
       <Project>{0226F97A-704E-49B0-A100-B75FEEC9C8AD}</Project>
-      <Name>SFA.DAS.EAS.Application</Name>
+      <Name>SFA.DAS.EmployerLevy.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Domain\SFA.DAS.EAS.Domain.csproj">
+    <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Domain\SFA.DAS.EmployerLevy.Domain.csproj">
       <Project>{EC415CDA-9294-4967-BD27-AA900985427D}</Project>
-      <Name>SFA.DAS.EAS.Domain</Name>
+      <Name>SFA.DAS.EmployerLevy.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

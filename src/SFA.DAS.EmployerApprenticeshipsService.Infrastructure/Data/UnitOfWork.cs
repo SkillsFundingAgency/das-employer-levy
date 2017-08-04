@@ -1,10 +1,10 @@
-﻿using Dapper;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using SFA.DAS.EAS.Domain.Data;
+using Dapper;
+using SFA.DAS.EmployerLevy.Domain.Data;
 
-namespace SFA.DAS.EAS.Infrastructure.Data
+namespace SFA.DAS.EmployerLevy.Infrastructure.Data
 {
     public class UnitOfWork : IUnitOfWork
     {

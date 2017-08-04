@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace SFA.DAS.EAS.Application.Queries.GetEnglishFractionUpdateRequired
+namespace SFA.DAS.EmployerLevy.Application.Queries.GetEnglishFractionUpdateRequired
 {
     public class GetEnglishFractionUpdateRequiredRequest : IAsyncRequest<GetEnglishFractionUpdateRequiredResponse>
     {

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Application.Queries.AccountTransactions.GetEnglishFrationDetail;
-using SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetEnglishFrationDetail;
+using SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 
-namespace SFA.DAS.EAS.Infrastructure.Services
+namespace SFA.DAS.EmployerLevy.Infrastructure.Services
 {
     public class DasLevyService : IDasLevyService
     {

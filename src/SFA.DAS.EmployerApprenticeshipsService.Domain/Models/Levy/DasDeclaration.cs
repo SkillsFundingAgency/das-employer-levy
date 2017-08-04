@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SFA.DAS.EAS.Domain.Models.Levy
+namespace SFA.DAS.EmployerLevy.Domain.Models.Levy
 {
     public class DasDeclaration
     {

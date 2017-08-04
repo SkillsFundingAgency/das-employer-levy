@@ -5,7 +5,7 @@ using SFA.DAS.Configuration;
 using SFA.DAS.Configuration.AzureTableStorage;
 using SFA.DAS.Configuration.FileStorage;
 
-namespace SFA.DAS.EAS.Infrastructure.DependencyResolution
+namespace SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution
 {
     public static class ConfigurationHelper
     {

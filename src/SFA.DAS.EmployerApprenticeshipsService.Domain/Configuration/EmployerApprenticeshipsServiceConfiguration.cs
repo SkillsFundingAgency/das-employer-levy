@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Azure;
-using SFA.DAS.EAS.Domain.Interfaces;
+﻿using SFA.DAS.EmployerLevy.Domain.Interfaces;
 
-namespace SFA.DAS.EAS.Domain.Configuration
+namespace SFA.DAS.EmployerLevy.Domain.Configuration
 {
     public class EmployerApprenticeshipsServiceConfiguration : IConfiguration
     {

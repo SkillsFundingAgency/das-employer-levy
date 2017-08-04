@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Queries.GetGatewayToken;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.Application.Queries.GetGatewayToken;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Queries.GetGatewayTokenTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Queries.GetGatewayTokenTests
 {
     public class WhenGettingTokenResponseFromHmrc
     {

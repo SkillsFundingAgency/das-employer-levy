@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using SFA.DAS.EAS.Infrastructure.ExecutionPolicies;
+using SFA.DAS.EmployerLevy.Infrastructure.ExecutionPolicies;
 using StructureMap;
 using StructureMap.Pipeline;
 
-namespace SFA.DAS.EAS.Infrastructure.DependencyResolution
+namespace SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution
 {
     public class ExecutionPolicyPolicy : ConfiguredInstancePolicy
     {

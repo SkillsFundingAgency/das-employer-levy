@@ -5,20 +5,19 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Azure;
-using SFA.DAS.EAS.Application.Commands.CreateEnglishFractionCalculationDate;
-using SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData;
-using SFA.DAS.EAS.Application.Commands.UpdateEnglishFractions;
-using SFA.DAS.EAS.Application.Messages;
-using SFA.DAS.EAS.Application.Queries.GetEnglishFractionUpdateRequired;
-using SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration;
-using SFA.DAS.EAS.Domain.Attributes;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Application.Commands.CreateEnglishFractionCalculationDate;
+using SFA.DAS.EmployerLevy.Application.Commands.RefreshEmployerLevyData;
+using SFA.DAS.EmployerLevy.Application.Commands.UpdateEnglishFractions;
+using SFA.DAS.EmployerLevy.Application.Messages;
+using SFA.DAS.EmployerLevy.Application.Queries.GetEnglishFractionUpdateRequired;
+using SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration;
+using SFA.DAS.EmployerLevy.Domain.Attributes;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 using SFA.DAS.Messaging;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers
+namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
     public class LevyDeclaration : ILevyDeclaration
     {

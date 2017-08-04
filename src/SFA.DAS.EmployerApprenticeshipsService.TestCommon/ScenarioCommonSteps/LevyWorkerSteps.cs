@@ -4,18 +4,17 @@ using System.Linq;
 using System.Threading;
 using System.Web.Configuration;
 using Moq;
-using SFA.DAS.EAS.Application.Messages;
-using SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration;
-using SFA.DAS.EAS.Domain.Attributes;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.LevyDeclarationProvider.Worker.Providers;
-using SFA.DAS.EAS.TestCommon.DependencyResolution;
-using SFA.DAS.EAS.TestCommon.ObjectMothers;
+using SFA.DAS.EmployerLevy.Application.Messages;
+using SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration;
+using SFA.DAS.EmployerLevy.Domain.Attributes;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers;
+using SFA.DAS.EmployerLevy.TestCommon.DependencyResolution;
+using SFA.DAS.EmployerLevy.TestCommon.ObjectMothers;
 using SFA.DAS.Messaging;
 using StructureMap;
-using TechTalk.SpecFlow;
 
-namespace SFA.DAS.EAS.TestCommon.ScenarioCommonSteps
+namespace SFA.DAS.EmployerLevy.TestCommon.ScenarioCommonSteps
 {
     public class LevyWorkerSteps : IDisposable
     {

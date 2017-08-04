@@ -1,4 +1,4 @@
-﻿namespace SFA.DAS.EAS.Application.Queries.GetGatewayInformation
+﻿namespace SFA.DAS.EmployerLevy.Application.Queries.GetGatewayInformation
 {
     public class GetGatewayInformationResponse
     {

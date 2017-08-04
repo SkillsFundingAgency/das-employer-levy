@@ -2,14 +2,14 @@ using System.Threading.Tasks;
 using System.Web;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Domain.Configuration;
-using SFA.DAS.EAS.Domain.Http;
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
-using SFA.DAS.EAS.Infrastructure.Services;
+using SFA.DAS.EmployerLevy.Domain.Configuration;
+using SFA.DAS.EmployerLevy.Domain.Http;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.Infrastructure.Services;
 using SFA.DAS.TokenService.Api.Client;
 using SFA.DAS.TokenService.Api.Types;
 
-namespace SFA.DAS.EAS.Infrastructure.UnitTests.Services.HmrcServiceTests
+namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.HmrcServiceTests
 {
     public class WhenICallTheHmrcServiceForEmprefWithPrivilegedAccess
     {

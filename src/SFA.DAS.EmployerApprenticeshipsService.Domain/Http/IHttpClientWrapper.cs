@@ -2,7 +2,7 @@
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace SFA.DAS.EAS.Domain.Http
+namespace SFA.DAS.EmployerLevy.Domain.Http
 {
     public interface IHttpClientWrapper
     {

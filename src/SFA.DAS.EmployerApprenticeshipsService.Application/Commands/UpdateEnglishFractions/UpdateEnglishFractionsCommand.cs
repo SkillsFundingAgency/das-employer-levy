@@ -1,8 +1,7 @@
-﻿using System;
-using MediatR;
-using SFA.DAS.EAS.Application.Queries.GetEnglishFractionUpdateRequired;
+﻿using MediatR;
+using SFA.DAS.EmployerLevy.Application.Queries.GetEnglishFractionUpdateRequired;
 
-namespace SFA.DAS.EAS.Application.Commands.UpdateEnglishFractions
+namespace SFA.DAS.EmployerLevy.Application.Commands.UpdateEnglishFractions
 {
     public class UpdateEnglishFractionsCommand : IAsyncRequest
     {

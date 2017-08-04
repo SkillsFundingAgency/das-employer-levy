@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using SFA.DAS.EAS.Application.Validation;
+using SFA.DAS.EmployerLevy.Application.Validation;
 
-namespace SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData
+namespace SFA.DAS.EmployerLevy.Application.Commands.RefreshEmployerLevyData
 {
     public class RefreshEmployerLevyDataCommandValidator : IValidator<RefreshEmployerLevyDataCommand>
     {

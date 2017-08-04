@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Queries.GetGatewayInformation;
-using SFA.DAS.EAS.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Application.Queries.GetGatewayInformation;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Queries.GetGatewayInformationTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Queries.GetGatewayInformationTests
 {
     public class WhenGettingGatewayQuery
     {

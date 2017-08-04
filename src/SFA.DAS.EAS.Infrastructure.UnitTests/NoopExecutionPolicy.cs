@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace SFA.DAS.EAS.Infrastructure.UnitTests
+namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests
 {
     public class NoopExecutionPolicy : ExecutionPolicies.ExecutionPolicy
     {

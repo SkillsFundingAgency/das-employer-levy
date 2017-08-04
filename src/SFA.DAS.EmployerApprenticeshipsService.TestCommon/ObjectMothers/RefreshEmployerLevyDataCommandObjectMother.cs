@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.HmrcLevy;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Application.Commands.RefreshEmployerLevyData;
+using SFA.DAS.EmployerLevy.Domain.Models.HmrcLevy;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 
-namespace SFA.DAS.EAS.TestCommon.ObjectMothers
+namespace SFA.DAS.EmployerLevy.TestCommon.ObjectMothers
 {
     public static class RefreshEmployerLevyDataCommandObjectMother
     {

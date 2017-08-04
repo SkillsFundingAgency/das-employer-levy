@@ -1,11 +1,9 @@
 using System;
-
 using Polly;
-
-using SFA.DAS.EAS.Domain.Http;
+using SFA.DAS.EmployerLevy.Domain.Http;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.Infrastructure.ExecutionPolicies
+namespace SFA.DAS.EmployerLevy.Infrastructure.ExecutionPolicies
 {
     [PolicyName(Name)]
     public class IdamsExecutionPolicy : ExecutionPolicy

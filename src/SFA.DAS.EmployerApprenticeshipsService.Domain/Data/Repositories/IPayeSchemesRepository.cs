@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SFA.DAS.EAS.Domain.Data.Repositories
+namespace SFA.DAS.EmployerLevy.Domain.Data.Repositories
 {
     public interface IPayeSchemesRepository
     {

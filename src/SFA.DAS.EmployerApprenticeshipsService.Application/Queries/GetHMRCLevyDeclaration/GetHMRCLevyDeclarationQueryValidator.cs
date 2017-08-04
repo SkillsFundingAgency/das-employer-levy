@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using SFA.DAS.EAS.Application.Validation;
+using SFA.DAS.EmployerLevy.Application.Validation;
 
-namespace SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration
+namespace SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration
 {
     public class GetHMRCLevyDeclarationQueryValidator : IValidator<GetHMRCLevyDeclarationQuery>
     {

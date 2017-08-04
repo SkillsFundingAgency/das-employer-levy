@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 using SFA.DAS.NLog.Logger;
 
-namespace SFA.DAS.EAS.Application.Commands.UpdateEnglishFractions
+namespace SFA.DAS.EmployerLevy.Application.Commands.UpdateEnglishFractions
 {
     public class UpdateEnglishFractionsCommandHandler : AsyncRequestHandler<UpdateEnglishFractionsCommand>
     {

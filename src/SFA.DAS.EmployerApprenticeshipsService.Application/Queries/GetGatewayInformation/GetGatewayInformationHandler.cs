@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
 
-namespace SFA.DAS.EAS.Application.Queries.GetGatewayInformation
+namespace SFA.DAS.EmployerLevy.Application.Queries.GetGatewayInformation
 {
     public class GetGatewayInformationHandler : IAsyncRequestHandler<GetGatewayInformationQuery, GetGatewayInformationResponse>
     {

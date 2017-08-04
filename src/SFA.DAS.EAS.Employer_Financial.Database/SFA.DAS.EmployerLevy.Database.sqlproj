@@ -23,10 +23,10 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultSchema>employer_financial</DefaultSchema>
+    <DefaultSchema>employer_levy</DefaultSchema>
     <TargetFrameworkProfile />
     <IsEncryptionOn>True</IsEncryptionOn>
-    <TargetDatabase>SFA.DAS.EAS.Employer_Financial.Database</TargetDatabase>
+    <TargetDatabase>SFA.DAS.EmployerLevy.Database</TargetDatabase>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>

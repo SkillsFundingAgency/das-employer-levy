@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using SFA.DAS.EAS.Application.Validation;
+using SFA.DAS.EmployerLevy.Application.Validation;
 
-namespace SFA.DAS.EAS.Application.Commands.AuditCommand
+namespace SFA.DAS.EmployerLevy.Application.Commands.AuditCommand
 {
     public class CreateAuditCommandValidator : IValidator<CreateAuditCommand>
     {

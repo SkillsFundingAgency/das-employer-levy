@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace SFA.DAS.EAS.LevyAccountUpdater.WebJob.Updater
+namespace SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.Updater
 {
     public interface IAccountUpdater
     {

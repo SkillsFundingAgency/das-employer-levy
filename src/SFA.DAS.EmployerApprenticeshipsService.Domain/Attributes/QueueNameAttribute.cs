@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SFA.DAS.EAS.Domain.Attributes
+namespace SFA.DAS.EmployerLevy.Domain.Attributes
 {
     public class QueueNameAttribute : Attribute
     {

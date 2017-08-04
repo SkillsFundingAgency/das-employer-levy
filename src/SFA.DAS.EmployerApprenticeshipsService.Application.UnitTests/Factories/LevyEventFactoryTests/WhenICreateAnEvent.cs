@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Factories;
+using SFA.DAS.EmployerLevy.Application.Factories;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Factories.LevyEventFactoryTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Factories.LevyEventFactoryTests
 {
     internal class WhenICreateAnEvent
     {

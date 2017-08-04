@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using SFA.DAS.Messaging;
 
-namespace SFA.DAS.EAS.TestCommon.MockModels
+namespace SFA.DAS.EmployerLevy.TestCommon.MockModels
 {
     public class MockMessage<T> : Message<T>
     {

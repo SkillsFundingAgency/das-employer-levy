@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Data;
-using SFA.DAS.EAS.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
 
-namespace SFA.DAS.EAS.Application.Queries.AccountTransactions.GetEnglishFrationDetail
+namespace SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetEnglishFrationDetail
 {
     public class GetEnglishFractionDetailByEmpRefQueryHandler : IAsyncRequestHandler<GetEnglishFractionDetailByEmpRefQuery, GetEnglishFractionDetailResposne>
     {

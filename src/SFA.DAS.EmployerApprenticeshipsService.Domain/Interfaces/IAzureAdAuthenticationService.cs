@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
-namespace SFA.DAS.EAS.Domain.Interfaces
+namespace SFA.DAS.EmployerLevy.Domain.Interfaces
 {
     public interface IAzureAdAuthenticationService
     {

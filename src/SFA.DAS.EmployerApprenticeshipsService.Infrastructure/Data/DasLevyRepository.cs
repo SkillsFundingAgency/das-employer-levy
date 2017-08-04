@@ -5,13 +5,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
-using SFA.DAS.EAS.Domain.Configuration;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Models.Levy;
-using SFA.DAS.Sql.Client;
+using SFA.DAS.EmployerLevy.Domain.Configuration;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
 using SFA.DAS.NLog.Logger;
+using SFA.DAS.Sql.Client;
 
-namespace SFA.DAS.EAS.Infrastructure.Data
+namespace SFA.DAS.EmployerLevy.Infrastructure.Data
 {
     public class DasLevyRepository : BaseRepository, IDasLevyRepository
     {

@@ -2,7 +2,7 @@
 using Microsoft.Azure;
 using NLog;
 
-namespace SFA.DAS.EAS.Infrastructure.Logging
+namespace SFA.DAS.EmployerLevy.Infrastructure.Logging
 {
     public static class LoggingConfig
     {

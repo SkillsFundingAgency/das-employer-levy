@@ -1,7 +1,7 @@
 ﻿using System;
 using SFA.DAS.TimeProvider;
 
-namespace SFA.DAS.EAS.Application.UnitTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests
 {
     public class FakeTimeProvider : DateTimeProvider
     {

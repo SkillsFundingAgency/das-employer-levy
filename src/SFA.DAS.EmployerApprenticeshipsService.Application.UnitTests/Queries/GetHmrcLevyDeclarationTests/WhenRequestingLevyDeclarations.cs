@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using MediatR;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
-using SFA.DAS.EAS.Application.Queries.GetHMRCLevyDeclaration;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Data;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.Levy;
-using SFA.DAS.EAS.TestCommon.ObjectMothers;
+using SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
+using SFA.DAS.EmployerLevy.Application.Queries.GetHMRCLevyDeclaration;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.TestCommon.ObjectMothers;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Queries.GetHmrcLevyDeclarationTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Queries.GetHmrcLevyDeclarationTests
 {
     public class WhenRequestingLevyDeclarations
     {

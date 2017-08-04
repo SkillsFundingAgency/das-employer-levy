@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SFA.DAS.EAS.TestCommon.Extensions
+namespace SFA.DAS.EmployerLevy.TestCommon.Extensions
 {
     public static class DateTimeExtention
     {

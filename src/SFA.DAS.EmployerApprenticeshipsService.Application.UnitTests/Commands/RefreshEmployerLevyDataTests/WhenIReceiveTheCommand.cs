@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MediatR;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Account.Api.Types.Events.Levy;
-using SFA.DAS.EAS.Application.Commands.PublishGenericEvent;
-using SFA.DAS.EAS.Application.Commands.RefreshEmployerLevyData;
-using SFA.DAS.EAS.Application.Factories;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.Levy;
-using SFA.DAS.EAS.TestCommon.ObjectMothers;
-using SFA.DAS.Events.Api.Types;
+using SFA.DAS.EmployerLevy.Application.Commands.RefreshEmployerLevyData;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.TestCommon.ObjectMothers;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Commands.RefreshEmployerLevyDataTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.RefreshEmployerLevyDataTests
 {
     public class WhenIReceiveTheCommand
     {

@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using SFA.DAS.Audit.Types;
-using SFA.DAS.EAS.Application.Commands.AuditCommand;
-using SFA.DAS.EAS.Application.Validation;
-using SFA.DAS.EAS.Domain.Interfaces;
-using SFA.DAS.EAS.Domain.Models.Audit;
+using SFA.DAS.EmployerLevy.Application.Commands.AuditCommand;
+using SFA.DAS.EmployerLevy.Application.Validation;
+using SFA.DAS.EmployerLevy.Domain.Interfaces;
+using SFA.DAS.EmployerLevy.Domain.Models.Audit;
 
-namespace SFA.DAS.EAS.Application.UnitTests.Commands.AuditCommandTests
+namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.AuditCommandTests
 {
     public class WhenIProcessTheCommand
     {

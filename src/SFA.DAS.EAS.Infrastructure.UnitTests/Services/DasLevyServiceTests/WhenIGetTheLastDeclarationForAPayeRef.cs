@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MediatR;
 using Moq;
 using NUnit.Framework;
-using SFA.DAS.EAS.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
-using SFA.DAS.EAS.Domain.Models.Levy;
-using SFA.DAS.EAS.Infrastructure.Services;
+using SFA.DAS.EmployerLevy.Application.Queries.AccountTransactions.GetLastLevyDeclaration;
+using SFA.DAS.EmployerLevy.Domain.Models.Levy;
+using SFA.DAS.EmployerLevy.Infrastructure.Services;
 
-namespace SFA.DAS.EAS.Infrastructure.UnitTests.Services.DasLevyServiceTests
+namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.DasLevyServiceTests
 {
     public class WhenIGetTheLastDeclarationForAPayeRef
     {

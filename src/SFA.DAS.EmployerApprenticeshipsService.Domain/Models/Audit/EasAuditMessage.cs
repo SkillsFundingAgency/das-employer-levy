@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using SFA.DAS.Audit.Types;
 
-namespace SFA.DAS.EAS.Domain.Models.Audit
+namespace SFA.DAS.EmployerLevy.Domain.Models.Audit
 {
     public class EasAuditMessage
     {
