@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [employer_financial].[GetEnglishFraction_ByEmpRef]
+﻿CREATE PROCEDURE [employer_levy].[GetEnglishFraction_ByEmpRef]
 	@empref varchar(50)
 as
 select * from
@@ -8,11 +8,11 @@ select * from
 		ef.DateCalculated,
 		COALESCE(efo.Amount, ef.Amount) AS Amount,
 		ef.EmpRef
-	from [employer_financial].EnglishFraction ef
+	from [employer_levy].EnglishFraction ef
 	outer apply
 	(
 		select top 1 Amount
-		from [employer_financial].[EnglishFractionOverride] o
+		from [employer_levy].[EnglishFractionOverride] o
 		where o.EmpRef = @empref and o.DateFrom <= DateCalculated
 		order by o.DateFrom desc
 	) efo
@@ -23,7 +23,7 @@ select * from
 		o.DateFrom AS DateCalculated,
 		o.Amount,
 		o.EmpRef
-	from [employer_financial].[EnglishFractionOverride] o
+	from [employer_levy].[EnglishFractionOverride] o
 	where o.EmpRef = @empref and o.DateFrom <= GETDATE()
 ) x
 order by x.DateCalculated desc

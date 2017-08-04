@@ -1,4 +1,4 @@
-﻿CREATE VIEW [employer_financial].[GetLevyDeclarationAndTopUp]
+﻿CREATE VIEW [employer_levy].[GetLevyDeclarationAndTopUp]
 AS
 
 SELECT *,
@@ -10,11 +10,11 @@ FROM
 		(SELECT 
 			ld.*,
 			ld.LevyDueYTD - ISNULL(y.LevyDueYTD, 0) AS LevyDeclaredInMonth
-		FROM [employer_financial].[GetLevyDeclaration] ld
+		FROM [employer_levy].[GetLevyDeclaration] ld
 		outer apply
 		(
 			SELECT TOP 1 LevyDueYTD
-			FROM [employer_financial].[GetLevyDeclaration] y
+			FROM [employer_levy].[GetLevyDeclaration] y
 			WHERE y.EmpRef = ld.empRef AND y.PayrollYear = ld.PayrollYear AND y.LastSubmission = 1 AND y.PayrollMonth < ld.PayrollMonth AND y.LevyDueYTD IS NOT NULL
 			ORDER BY y.PayrollMonth DESC
 		) y

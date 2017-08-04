@@ -1,10 +1,10 @@
-﻿CREATE PROCEDURE [employer_financial].[GetLevyDeclarationSubmissionIdsByEmpRef]
+﻿CREATE PROCEDURE [employer_levy].[GetLevyDeclarationSubmissionIdsByEmpRef]
 	@empRef NVARCHAR(50)
 AS
 	select 
 		x.SubmissionId
 	FROM 
-		[employer_financial].[GetLevyDeclarationAndTopUp] x
+		[employer_levy].[GetLevyDeclarationAndTopUp] x
 	where
 	x.EmpRef = @empRef
 	order by SubmissionDate asc

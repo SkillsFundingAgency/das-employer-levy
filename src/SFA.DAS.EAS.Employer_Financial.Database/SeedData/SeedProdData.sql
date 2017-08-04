@@ -11,10 +11,10 @@ Post-Deployment Script Template
 */
 
 
-IF (NOT EXISTS(SELECT * FROM [employer_financial].[TopUpPercentage] WHERE Id = 1
+IF (NOT EXISTS(SELECT * FROM [employer_levy].[TopUpPercentage] WHERE Id = 1
 	AND DateFrom = '2015-01-01 00:00:00.000'))
 BEGIN 
-	INSERT INTO [employer_financial].[TopUpPercentage]
+	INSERT INTO [employer_levy].[TopUpPercentage]
 	(DateFrom,Amount)
 	VALUES
 	('2015-01-01 00:00:00.000',0.1)

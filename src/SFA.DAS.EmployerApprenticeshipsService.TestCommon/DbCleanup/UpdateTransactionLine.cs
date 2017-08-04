@@ -21,7 +21,7 @@ namespace SFA.DAS.EAS.TestCommon.DbCleanup
             parameters.Add("@createdDate", createdDate, DbType.DateTime);
 
             await WithConnection(async c => await c.ExecuteAsync(
-                "[employer_financial].[UpdateTransactionLineDate_BySubmissionId]",
+                "[employer_levy].[UpdateTransactionLineDate_BySubmissionId]",
                 parameters,
                 commandType: CommandType.StoredProcedure));
         }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseName>[TargetDatabaseName]</TargetDatabaseName>
-    <DeployScriptFileName>SFA.DAS.EAS.Employer_Financial.sql</DeployScriptFileName>
+    <DeployScriptFileName>SFA.DAS.EAS.employer_levy.sql</DeployScriptFileName>
     <TargetConnectionString>Data Source=[DBServer];Persist Security Info=True;User ID=[DBUser];Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
   </PropertyGroup>

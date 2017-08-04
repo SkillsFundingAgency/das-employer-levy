@@ -20,14 +20,14 @@ BEGIN
 	DECLARE @submissionDate DATETIME
 	SET @submissionDate = GETDATE()
 
-	EXEC [employer_financial].[CreateDeclaration] @levyAmount, @payeScheme, @submissionDate, 123, 123, @levyAmount, ''17-18'', 1, @submissionDate, NULL, NULL, NULL, 0, 0 
+	EXEC [employer_levy].[CreateDeclaration] @levyAmount, @payeScheme, @submissionDate, 123, 123, @levyAmount, ''17-18'', 1, @submissionDate, NULL, NULL, NULL, 0, 0 
 END'
 
 EXEC sp_executesql @sqlCommand
 
-IF NOT EXISTS(SELECT 1 FROM [employer_financial].[TopUpPercentage] WHERE datefrom='2015-01-01 00:00:00.000' and amount=0.1 )
+IF NOT EXISTS(SELECT 1 FROM [employer_levy].[TopUpPercentage] WHERE datefrom='2015-01-01 00:00:00.000' and amount=0.1 )
 BEGIN
-	insert into [employer_financial].[TopUpPercentage]
+	insert into [employer_levy].[TopUpPercentage]
 	(datefrom,amount)
 	values
 	('2015-01-01 00:00:00.000',0.1)

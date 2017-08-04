@@ -13,19 +13,19 @@
 
 IF EXISTS(select 1 from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'EnglishFraction' and COLUMN_NAME = 'Amount' and NUMERIC_SCALE = 4)
 BEGIN
-	ALTER TABLE [employer_financial].[EnglishFraction] 
+	ALTER TABLE [employer_levy].[EnglishFraction] 
 	ALTER COLUMN AMOUNT DECIMAL(18,5) NULL
 END
 IF EXISTS(select 1  from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'EnglishFraction' and COLUMN_NAME='EmpRef' AND DATA_TYPE = 'nchar')
 BEGIN
-	ALTER TABLE [employer_financial].[EnglishFraction] 
+	ALTER TABLE [employer_levy].[EnglishFraction] 
 	ALTER COLUMN EmpRef NVARCHAR(50) NULL
 END
 IF EXISTS(select 1 from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'LevyDeclaration')
 BEGIN
 	IF NOT EXISTS(select 1 from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'LevyDeclaration' and COLUMN_NAME = 'CreatedDate')
 	BEGIN
-		ALTER TABLE [employer_financial].[LevyDeclaration] 
+		ALTER TABLE [employer_levy].[LevyDeclaration] 
 		Add CreatedDate DATETIME NOT NULL DEFAULT GETDATE()
 	END
 END

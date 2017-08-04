@@ -1,4 +1,4 @@
-﻿CREATE TABLE [employer_financial].[TopUpPercentage]
+﻿CREATE TABLE [employer_levy].[TopUpPercentage]
 (
 	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
     [DateFrom] DATETIME NOT NULL, 

@@ -1,10 +1,10 @@
-﻿CREATE PROCEDURE [employer_financial].[GetLastLevyDeclarations_ByEmpRef]
+﻿CREATE PROCEDURE [employer_levy].[GetLastLevyDeclarations_ByEmpRef]
 	@empRef varchar(20)
 AS
 	select top 1
 		*
 	FROM 
-		[employer_financial].[LevyDeclaration]
+		[employer_levy].[LevyDeclaration]
 	where
 		EmpRef = @empRef
 	order by SubmissionDate desc

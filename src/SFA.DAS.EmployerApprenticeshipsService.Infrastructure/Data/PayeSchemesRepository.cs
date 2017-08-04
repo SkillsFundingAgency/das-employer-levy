@@ -22,7 +22,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
             var result = await WithConnection(async c =>
             {
                 return await c.QueryAsync<string>(
-                    sql: "[employer_financial].[GetPayeSchemes]",
+                    sql: "[employer_levy].[GetPayeSchemes]",
                     commandType: CommandType.StoredProcedure);
             });
 

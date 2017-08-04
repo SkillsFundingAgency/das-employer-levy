@@ -1,4 +1,4 @@
-﻿CREATE TABLE [employer_financial].[LevyDeclaration]
+﻿CREATE TABLE [employer_levy].[LevyDeclaration]
 (
 	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
 	[empRef] NVARCHAR(50) NOT NULL, 
@@ -19,9 +19,9 @@
 
 GO
 
-CREATE INDEX [IX_LevyDeclaration_submissionid] ON [employer_financial].[LevyDeclaration] (submissionId)
+CREATE INDEX [IX_LevyDeclaration_submissionid] ON [employer_levy].[LevyDeclaration] (submissionId)
 
 GO
 
-CREATE INDEX [IX_LevyDeclaration_Empref] ON [employer_financial].[LevyDeclaration] (empref,payrollyear,payrollmonth,EndofYearAdjustment) 
+CREATE INDEX [IX_LevyDeclaration_Empref] ON [employer_levy].[LevyDeclaration] (empref,payrollyear,payrollmonth,EndofYearAdjustment) 
 GO

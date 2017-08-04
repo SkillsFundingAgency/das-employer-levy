@@ -1,4 +1,4 @@
-﻿CREATE FUNCTION [employer_financial].[CalculateSubmissionCutoffDate]
+﻿CREATE FUNCTION [employer_levy].[CalculateSubmissionCutoffDate]
 (
 	@payrollMonth INT,
 	@payrollYear NVARCHAR(10)

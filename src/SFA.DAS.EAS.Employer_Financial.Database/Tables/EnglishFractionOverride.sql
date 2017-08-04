@@ -1,4 +1,4 @@
-﻿CREATE TABLE [employer_financial].[EnglishFractionOverride]
+﻿CREATE TABLE [employer_levy].[EnglishFractionOverride]
 (
 	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
     [EmpRef] NVARCHAR(50) NOT NULL, 

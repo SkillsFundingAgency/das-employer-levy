@@ -1,4 +1,4 @@
-﻿CREATE TABLE [employer_financial].LevyDeclarationTopup
+﻿CREATE TABLE [employer_levy].LevyDeclarationTopup
 (
 	[Id] BIGINT identity (1,1) not null,
 	[DateAdded] DATETIME not null,
@@ -8,4 +8,4 @@
 )
 GO
 
-CREATE INDEX [IX_LevyDeclarationtopup_submissionid] ON [employer_financial].[LevyDeclarationTopup] (submissionId)
+CREATE INDEX [IX_LevyDeclarationtopup_submissionid] ON [employer_levy].[LevyDeclarationTopup] (submissionId)

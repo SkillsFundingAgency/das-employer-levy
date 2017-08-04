@@ -19,7 +19,7 @@ namespace SFA.DAS.EAS.TestCommon.DbCleanup
             var parameters = new DynamicParameters();
             parameters.Add("@INCLUDETOPUPTABLE", 1, DbType.Int16);
             await WithConnection(async c => await c.ExecuteAsync(
-                "[employer_financial].[Cleardown]",
+                "[employer_levy].[Cleardown]",
                 parameters,
                 commandType: CommandType.StoredProcedure));
             

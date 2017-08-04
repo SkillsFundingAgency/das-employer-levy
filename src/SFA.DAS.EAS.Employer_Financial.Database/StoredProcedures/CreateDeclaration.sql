@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [employer_financial].[CreateDeclaration]
+﻿CREATE PROCEDURE [employer_levy].[CreateDeclaration]
 	@LevyDueYtd DECIMAL (18,4), 
 	@EmpRef NVARCHAR(20), 
 	@SubmissionDate DATETIME, 
@@ -16,7 +16,7 @@
 AS
 	
 
-INSERT INTO [employer_financial].[LevyDeclaration] 
+INSERT INTO [employer_levy].[LevyDeclaration] 
 	(
 		LevyDueYtd, 
 		empRef, 

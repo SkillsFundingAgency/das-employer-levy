@@ -1,3 +1,3 @@
-﻿CREATE PROCEDURE [employer_financial].[GetPayeSchemes]
+﻿CREATE PROCEDURE [employer_levy].[GetPayeSchemes]
 AS
-	SELECT EmpRef FROM [employer_financial].[PayeSchemes]
+	SELECT EmpRef FROM [employer_levy].[PayeSchemes]

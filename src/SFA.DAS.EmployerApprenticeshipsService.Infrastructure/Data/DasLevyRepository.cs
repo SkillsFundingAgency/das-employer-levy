@@ -33,7 +33,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
                 parameters.Add("@empRef", empRef, DbType.String);
 
                 return await c.QueryAsync<DasDeclaration>(
-                    sql: "SELECT LevyDueYtd, SubmissionId AS Id, SubmissionDate AS [Date] FROM [employer_financial].[LevyDeclaration] WHERE empRef = @EmpRef and SubmissionId = @Id;",
+                    sql: "SELECT LevyDueYtd, SubmissionId AS Id, SubmissionDate AS [Date] FROM [employer_levy].[LevyDeclaration] WHERE empRef = @EmpRef and SubmissionId = @Id;",
                     param: parameters,
                     commandType: CommandType.Text);
             });
@@ -47,7 +47,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
             parameters.Add("@empRef", empRef, DbType.String);
 
             var result = await WithConnection(async c => await c.QueryAsync<long>(
-                sql: "[employer_financial].[GetLevyDeclarationSubmissionIdsByEmpRef]",
+                sql: "[employer_levy].[GetLevyDeclarationSubmissionIdsByEmpRef]",
                 param: parameters,
                 commandType: CommandType.StoredProcedure));
 
@@ -94,7 +94,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
                             parameters.Add("@EndOfYearAdjustmentAmount", dasDeclaration.EndOfYearAdjustmentAmount,
                                 DbType.Decimal);
 
-                            await unitOfWork.Execute("[employer_financial].[CreateDeclaration]", parameters,
+                            await unitOfWork.Execute("[employer_levy].[CreateDeclaration]", parameters,
                                 CommandType.StoredProcedure);
                         }
 
@@ -117,7 +117,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
                 parameters.Add("@empRef", empRef, DbType.String);
 
                 return await c.QueryAsync<DasDeclaration>(
-                    sql: "[employer_financial].[GetLastLevyDeclarations_ByEmpRef]",
+                    sql: "[employer_levy].[GetLastLevyDeclarations_ByEmpRef]",
                     param: parameters,
                     commandType: CommandType.StoredProcedure);
             });
@@ -135,7 +135,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
                 parameters.Add("@payrollMonth", payrollMonth, DbType.Int32);
 
                 return await c.QueryAsync<DasDeclaration>(
-                    sql: "[employer_financial].[GetLevyDeclaration_ByEmpRefPayrollMonthPayrollYear]",
+                    sql: "[employer_levy].[GetLevyDeclaration_ByEmpRefPayrollMonthPayrollYear]",
                     param: parameters,
                     commandType: CommandType.StoredProcedure);
             });
@@ -151,7 +151,7 @@ namespace SFA.DAS.EAS.Infrastructure.Data
                 parameters.Add("@empRef", empRef, DbType.String);
 
                 return await c.QueryAsync<DasEnglishFraction>(
-                    sql: "[employer_financial].[GetEnglishFraction_ByEmpRef]",
+                    sql: "[employer_levy].[GetEnglishFraction_ByEmpRef]",
                     param: parameters,
                     commandType: CommandType.StoredProcedure);
             });

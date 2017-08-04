@@ -1,4 +1,4 @@
-﻿CREATE TABLE [employer_financial].[EnglishFraction]
+﻿CREATE TABLE [employer_levy].[EnglishFraction]
 (
 	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
     [DateCalculated] DATETIME NOT NULL, 
@@ -8,4 +8,4 @@
 
 GO
 
-CREATE INDEX [IX_EnglishFraction_Empref_DateCalculated] ON [employer_financial].[EnglishFraction] ([EmpRef], [DateCalculated]) WITH (ONLINE = ON)
+CREATE INDEX [IX_EnglishFraction_Empref_DateCalculated] ON [employer_levy].[EnglishFraction] ([EmpRef], [DateCalculated]) WITH (ONLINE = ON)
