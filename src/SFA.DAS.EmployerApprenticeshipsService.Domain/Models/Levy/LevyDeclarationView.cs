@@ -5,7 +5,6 @@ namespace SFA.DAS.EAS.Domain.Models.Levy
     public class LevyDeclarationView
     {
         public long Id { get; set; }
-        public long AccountId { get; set; }
         public string EmpRef { get; set; }
         public DateTime SubmissionDate { get; set; }
         public long SubmissionId { get; set; }

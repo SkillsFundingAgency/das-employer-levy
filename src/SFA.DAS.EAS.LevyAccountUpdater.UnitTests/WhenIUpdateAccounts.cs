@@ -6,7 +6,6 @@ using Moq;
 using NUnit.Framework;
 using SFA.DAS.EAS.Application.Messages;
 using SFA.DAS.EAS.Domain.Data.Repositories;
-using SFA.DAS.EAS.Domain.Models.PAYE;
 using SFA.DAS.EAS.LevyAccountUpdater.WebJob.Updater;
 using SFA.DAS.Messaging;
 using SFA.DAS.NLog.Logger;

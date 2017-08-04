@@ -76,19 +76,13 @@
     <Build Include="StoredProcedures\Cleardown.sql" />
     <Build Include="StoredProcedures\CreateDeclaration.sql" />
     <Build Include="Tables\TopUpPercentage.sql" />
-    <Build Include="StoredProcedures\GetLevyDeclarations_ByAccountId.sql" />
     <Build Include="StoredProcedures\GetLastLevyDeclarations_ByEmpRef.sql" />
-    <Build Include="StoredProcedures\ProcessDeclarationsTransactions.sql" />
-    <Build Include="StoredProcedures\GetLevyDetail_ByAccountIdAndDateRange.sql" />
     <Build Include="Tables\LevyDeclarationTopup.sql" />
     <Build Include="StoredProcedures\GetEnglishFraction_ByEmpRef.sql" />
     <Build Include="Tables\EnglishFractionCalculationDate.sql" />
     <Build Include="StoredProcedures\GetLevyDeclaration_ByEmpRefPayrollMonthPayrollYear.sql" />
-    <Build Include="StoredProcedures\GetLevyDeclarations_ByAccountPayrollMonthPayrollYear.sql" />
-    <Build Include="Tables\LevyOverride.sql" />
     <Build Include="Views\GetLevyDeclaration.sql" />
     <Build Include="Tables\EnglishFractionOverride.sql" />
-    <Build Include="StoredProcedures\GetCurrentFractionForScheme.sql" />
     <Build Include="Functions\CalculateSubmissionCutoffDate.sql" />
     <Build Include="StoredProcedures\GetLevyDeclarationSubmissionIdsByEmpRef.sql" />
   </ItemGroup>

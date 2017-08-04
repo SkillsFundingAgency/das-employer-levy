@@ -191,11 +191,7 @@
     <Compile Include="Models\Levy\DasEnglishFractions.cs" />
     <Compile Include="Models\Levy\LevyDeclarationSourceData.cs" />
     <Compile Include="Models\Levy\LevyDeclarationSourceDataItem.cs" />
-    <Compile Include="Models\PAYE\Paye.cs" />
-    <Compile Include="Models\PAYE\PayeView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\PAYE\PayeScheme.cs" />
-    <Compile Include="Models\PAYE\PayeSchemes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

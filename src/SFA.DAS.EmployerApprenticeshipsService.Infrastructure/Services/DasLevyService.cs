@@ -17,11 +17,10 @@ namespace SFA.DAS.EAS.Infrastructure.Services
             _mediator = mediator;
         }
 
-        public async Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(long accountId, string empRef)
+        public async Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(string empRef)
         {
             var result = await _mediator.SendAsync(new GetEnglishFractionDetailByEmpRefQuery
             {
-                AccountId = accountId,
                 EmpRef = empRef
             });
 

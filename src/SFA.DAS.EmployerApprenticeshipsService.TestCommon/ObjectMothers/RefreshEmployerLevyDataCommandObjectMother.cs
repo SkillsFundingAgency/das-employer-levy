@@ -9,7 +9,7 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
 {
     public static class RefreshEmployerLevyDataCommandObjectMother
     {
-        public static RefreshEmployerLevyDataCommand Create(string empRef, long accountId = 1)
+        public static RefreshEmployerLevyDataCommand Create(string empRef)
         {
 
             var refreshEmployerLevyDataCommand = new RefreshEmployerLevyDataCommand
@@ -57,7 +57,7 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
             return refreshEmployerLevyDataCommand;
         }
 
-        public static RefreshEmployerLevyDataCommand CreateLevyDataWithFutureSubmissions(string empRef, DateTime submissionStartDate, long accountId = 1)
+        public static RefreshEmployerLevyDataCommand CreateLevyDataWithFutureSubmissions(string empRef, DateTime submissionStartDate)
         {
             var refreshEmployerLevyDataCommand = new RefreshEmployerLevyDataCommand
             {
@@ -121,7 +121,7 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
             return refreshEmployerLevyDataCommand;
         }
 
-        public static RefreshEmployerLevyDataCommand CreateEndOfYearAdjustment(string empRef, long accountId = 1)
+        public static RefreshEmployerLevyDataCommand CreateEndOfYearAdjustment(string empRef)
         {
             var refreshEmployerLevyDataCommand = new RefreshEmployerLevyDataCommand
             {

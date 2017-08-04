@@ -109,40 +109,6 @@ namespace SFA.DAS.EAS.Infrastructure.Data
             }
         }
 
-        public async Task<List<LevyDeclarationView>> GetAccountLevyDeclarations(long accountId)
-        {
-            var result = await WithConnection(async c =>
-            {
-                var parameters = new DynamicParameters();
-                parameters.Add("@accountId", accountId, DbType.Int64);
-
-                return await c.QueryAsync<LevyDeclarationView>(
-                    sql: "[employer_financial].[GetLevyDeclarations_ByAccountId]",
-                    param: parameters,
-                    commandType: CommandType.StoredProcedure);
-            });
-
-            return result.ToList();
-        }
-
-        public async Task<List<LevyDeclarationView>> GetAccountLevyDeclarations(long accountId, string payrollYear, short payrollMonth)
-        {
-            var result = await WithConnection(async c =>
-            {
-                var parameters = new DynamicParameters();
-                parameters.Add("@accountId", accountId, DbType.Int64);
-                parameters.Add("@payrollYear", payrollYear, DbType.String);
-                parameters.Add("@payrollMonth", payrollMonth, DbType.Int16);
-
-                return await c.QueryAsync<LevyDeclarationView>(
-                    sql: "[employer_financial].[GetLevyDeclarations_ByAccountPayrollMonthPayrollYear]",
-                    param: parameters,
-                    commandType: CommandType.StoredProcedure);
-            });
-
-            return result.ToList();
-        }
-
         public async Task<DasDeclaration> GetLastSubmissionForScheme(string empRef)
         {
             var result = await WithConnection(async c =>
@@ -176,25 +142,12 @@ namespace SFA.DAS.EAS.Infrastructure.Data
 
             return result.SingleOrDefault();
         }
-
-        public async Task ProcessDeclarations(long accountId, string empRef)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@AccountId", accountId, DbType.Int64);
-            parameters.Add("@EmpRef", empRef, DbType.String);
-
-            await WithConnection(async c => await c.ExecuteAsync(
-                sql: "[employer_financial].[ProcessDeclarationsTransactions]",
-                param: parameters,
-                commandType: CommandType.StoredProcedure));
-        }
         
-        public async Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(long accountId, string empRef)
+        public async Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(string empRef)
         {
             var result = await WithConnection(async c =>
             {
                 var parameters = new DynamicParameters();
-                parameters.Add("@accountId", accountId, DbType.Int64);
                 parameters.Add("@empRef", empRef, DbType.String);
 
                 return await c.QueryAsync<DasEnglishFraction>(

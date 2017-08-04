@@ -2,7 +2,6 @@
 AS 
 SELECT 
 	ld.Id AS Id,	
-	ld.AccountId as AccountId,
 	ld.empRef AS EmpRef,
 	ld.SubmissionDate AS SubmissionDate,
 	ld.SubmissionId AS SubmissionId,
@@ -58,6 +57,6 @@ outer apply
 (
 	SELECT top 1 Amount
 	FROM [employer_financial].[EnglishFractionOverride] o
-	WHERE o.AccountId = ld.AccountId and o.EmpRef = ld.empref AND o.DateFrom < [employer_financial].[CalculateSubmissionCutoffDate](ld.PayrollMonth, ld.PayrollYear)
+	WHERE o.EmpRef = ld.empref AND o.DateFrom < [employer_financial].[CalculateSubmissionCutoffDate](ld.PayrollMonth, ld.PayrollYear)
 	ORDER BY DateFrom DESC
 ) efo

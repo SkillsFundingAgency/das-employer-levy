@@ -6,7 +6,7 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
 {
     public static class LevyDeclarationSourceDataObjectMother
     {
-        public static LevyDeclarationSourceData Create(List<Emprefs> emprefs, long accountId = 123453, int numberOfDeclarations = 1, int declarationsPerperiodPerPaye = 1, bool randomEnlgishFraction = false, bool addTopUp = false, DateTime? submissionStartDate = null,bool multipleAccountIds = false)
+        public static LevyDeclarationSourceData Create(List<Emprefs> emprefs, int numberOfDeclarations = 1, int declarationsPerperiodPerPaye = 1, bool randomEnlgishFraction = false, bool addTopUp = false, DateTime? submissionStartDate = null)
         {
             if (!submissionStartDate.HasValue)
             {
@@ -15,8 +15,7 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
 
             var item = new LevyDeclarationSourceData
             {
-                AccountId = accountId,
-                Data = BuildItems(numberOfDeclarations, emprefs, declarationsPerperiodPerPaye, randomEnlgishFraction, addTopUp, submissionStartDate.Value, accountId, multipleAccountIds)
+                Data = BuildItems(numberOfDeclarations, emprefs, declarationsPerperiodPerPaye, randomEnlgishFraction, addTopUp, submissionStartDate.Value)
             };
 
             return item;
@@ -26,7 +25,6 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
         {
             var returnValue =  new LevyDeclarationSourceData
             {
-                AccountId = 1,
                 Data = NewLevyDeclarationSourceDataItem(numberOfItems)
             
             };
@@ -43,7 +41,6 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
             {
                 items.Add(new LevyDeclarationSourceDataItem
                 {
-                    AccountId = 1,
                     EmpRef = "123/ABC",
                     EmprefAddedDate = new DateTime(2016, 01, 01),
                     EnglishFraction = 0.87544m,
@@ -62,7 +59,7 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
             return items;
         }
 
-        private static List<LevyDeclarationSourceDataItem> BuildItems(int numberOfDeclarations, List<Emprefs> emprefs, int declarationsPerperiodPerPaye, bool randomEnglishFraction, bool addTopup, DateTime submissionStartDate, long accountId, bool multipleAccountIds)
+        private static List<LevyDeclarationSourceDataItem> BuildItems(int numberOfDeclarations, List<Emprefs> emprefs, int declarationsPerperiodPerPaye, bool randomEnglishFraction, bool addTopup, DateTime submissionStartDate)
         {
             var randomLevyDueYtd = new Random();
             var list = new List<LevyDeclarationSourceDataItem>();
@@ -79,10 +76,8 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
                         var levyDueYtd = randomLevyDueYtd.Next(20, 1000);
 
 
-                        //var newAccountId = 
                         if (empref.DeclarationsForScheme!= 0 && i > empref.DeclarationsForScheme && !idUpdated)
                         {
-                            accountId = accountId + 1;
                             idUpdated = true;
                         }
 
@@ -99,8 +94,7 @@ namespace SFA.DAS.EAS.TestCommon.ObjectMothers
                             PayrollMonth = (short)submissionDate.Month,//TODO
                             PayrollYear = submissionDate.ToString("yy"),//TODO
                             LastSubmission = j == declarationsPerperiodPerPaye ? 1 : 0,
-                            TopUp = addTopup ? levyDueYtd * 0.1m : 0m,
-                            AccountId =  accountId
+                            TopUp = addTopup ? levyDueYtd * 0.1m : 0m
                         });
                     }
                 }

@@ -1,5 +1,4 @@
 ﻿CREATE PROCEDURE [employer_financial].[GetEnglishFraction_ByEmpRef]
-	@accountId bigint,
 	@empref varchar(50)
 as
 select * from
@@ -14,7 +13,7 @@ select * from
 	(
 		select top 1 Amount
 		from [employer_financial].[EnglishFractionOverride] o
-		where o.AccountId = @accountId and o.EmpRef = @empref and o.DateFrom <= DateCalculated
+		where o.EmpRef = @empref and o.DateFrom <= DateCalculated
 		order by o.DateFrom desc
 	) efo
 	where EmpRef = @empref
@@ -25,6 +24,6 @@ select * from
 		o.Amount,
 		o.EmpRef
 	from [employer_financial].[EnglishFractionOverride] o
-	where o.AccountId = @accountId and o.EmpRef = @empref and o.DateFrom <= GETDATE()
+	where o.EmpRef = @empref and o.DateFrom <= GETDATE()
 ) x
 order by x.DateCalculated desc

@@ -13,7 +13,6 @@ Post-Deployment Script Template
 DECLARE @sqlCommand NVARCHAR(4000)
 SELECT @sqlCommand = '
 CREATE PROCEDURE #CreateLevy
-	@accountId BIGINT,
 	@payeScheme NVARCHAR(50),
 	@levyAmount DECIMAL
 AS
@@ -21,7 +20,7 @@ BEGIN
 	DECLARE @submissionDate DATETIME
 	SET @submissionDate = GETDATE()
 
-	EXEC [employer_financial].[CreateDeclaration] @levyAmount, @payeScheme, @submissionDate, 123, 123, @accountId, @levyAmount, ''17-18'', 1, @submissionDate, NULL, NULL, NULL, 0, 0 
+	EXEC [employer_financial].[CreateDeclaration] @levyAmount, @payeScheme, @submissionDate, 123, 123, @levyAmount, ''17-18'', 1, @submissionDate, NULL, NULL, NULL, 0, 0 
 END'
 
 EXEC sp_executesql @sqlCommand
@@ -34,11 +33,8 @@ BEGIN
 	('2015-01-01 00:00:00.000',0.1)
 END
 
-EXECUTE #CreateLevy 2, '222/AA00002', 500
-EXECUTE #CreateLevy 3, '123/SFAT029', 1000000
-EXECUTE #CreateLevy 4, '101/CUR00016', 0
-EXECUTE [employer_financial].[ProcessDeclarationsTransactions] 2, '222/AA00002'
-EXECUTE [employer_financial].[ProcessDeclarationsTransactions] 3, '123/SFAT029'
-EXECUTE [employer_financial].[ProcessDeclarationsTransactions] 4, '101/CUR00016'
+EXECUTE #CreateLevy '222/AA00002', 500
+EXECUTE #CreateLevy '123/SFAT029', 1000000
+EXECUTE #CreateLevy '101/CUR00016', 0
 
 DROP PROCEDURE #CreateLevy

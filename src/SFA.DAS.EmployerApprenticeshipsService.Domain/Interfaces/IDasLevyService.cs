@@ -6,6 +6,6 @@ namespace SFA.DAS.EAS.Domain.Interfaces
 {
     public interface IDasLevyService
     {
-        Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(long accountId, string empRef);
+        Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(string empRef);
     }
 }
