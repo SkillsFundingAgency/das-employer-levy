@@ -32,18 +32,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.EmployerLevy.Applic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.EmployerLevy.Infrastructure.UnitTests", "SFA.DAS.EAS.Infrastructure.UnitTests\SFA.DAS.EmployerLevy.Infrastructure.UnitTests.csproj", "{8A2A2059-CB81-4336-8D08-BDCB37901B96}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PreReqs", "PreReqs", "{15DE899B-AD05-470D-B0F8-E5696141CA9A}"
-	ProjectSection(SolutionItems) = preProject
-		DasAmlCert.pfx = DasAmlCert.pfx
-		DasIDPCert.pfx = DasIDPCert.pfx
-		DevInstall.ps1 = DevInstall.ps1
-		localhost.pfx = localhost.pfx
-	EndProjectSection
-EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SFA.DAS.EmployerLevy.Database", "SFA.DAS.EAS.Employer_Financial.Database\SFA.DAS.EmployerLevy.Database.sqlproj", "{6C145D4A-CBA9-439C-984E-0A5953CBE04D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.EmployerLevy.Domain.UnitTests", "SFA.DAS.EmployerApprenticeshipsService.Domain.UnitTests\SFA.DAS.EmployerLevy.Domain.UnitTests.csproj", "{2CD30C50-6D64-4880-ACDC-D14E6BDF4462}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob", "SFA.DAS.EAS.LevyAccountUpdater.WebJob\SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.csproj", "{7220FB76-1DDB-4F58-9D67-F073CD6BBA02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.EmployerLevy.LevyAccountUpdater.UnitTests", "SFA.DAS.EAS.LevyAccountUpdater.UnitTests\SFA.DAS.EmployerLevy.LevyAccountUpdater.UnitTests.csproj", "{604152AB-9AB4-4A97-9A09-131F6C040CFD}"
@@ -57,6 +45,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AcceptanceTests", "AcceptanceTests", "{255E60DE-69C0-42A8-8D8B-997A368BE7CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.EmployerLevy.HmrcScenarios.AcceptanceTests", "SFA.DAS.EAS.Levy.HmrcScenarios.AcceptanceTests\SFA.DAS.EmployerLevy.HmrcScenarios.AcceptanceTests.csproj", "{4F4834B9-83CD-4F67-B6D9-12B691F801D0}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SFA.DAS.EmployerLevy.Database", "SFA.DAS.EmployerLevy.Database\SFA.DAS.EmployerLevy.Database.sqlproj", "{A21F8EE7-DA03-497A-A037-9F0245341CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,15 +90,6 @@ Global
 		{8A2A2059-CB81-4336-8D08-BDCB37901B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A2A2059-CB81-4336-8D08-BDCB37901B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A2A2059-CB81-4336-8D08-BDCB37901B96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C145D4A-CBA9-439C-984E-0A5953CBE04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C145D4A-CBA9-439C-984E-0A5953CBE04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C145D4A-CBA9-439C-984E-0A5953CBE04D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{6C145D4A-CBA9-439C-984E-0A5953CBE04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C145D4A-CBA9-439C-984E-0A5953CBE04D}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{2CD30C50-6D64-4880-ACDC-D14E6BDF4462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CD30C50-6D64-4880-ACDC-D14E6BDF4462}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CD30C50-6D64-4880-ACDC-D14E6BDF4462}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CD30C50-6D64-4880-ACDC-D14E6BDF4462}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7220FB76-1DDB-4F58-9D67-F073CD6BBA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7220FB76-1DDB-4F58-9D67-F073CD6BBA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7220FB76-1DDB-4F58-9D67-F073CD6BBA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,6 +110,12 @@ Global
 		{4F4834B9-83CD-4F67-B6D9-12B691F801D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F4834B9-83CD-4F67-B6D9-12B691F801D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F4834B9-83CD-4F67-B6D9-12B691F801D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21F8EE7-DA03-497A-A037-9F0245341CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21F8EE7-DA03-497A-A037-9F0245341CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21F8EE7-DA03-497A-A037-9F0245341CC6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A21F8EE7-DA03-497A-A037-9F0245341CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21F8EE7-DA03-497A-A037-9F0245341CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21F8EE7-DA03-497A-A037-9F0245341CC6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,7 +125,6 @@ Global
 		{8EFAE9BB-8F29-4E3D-9EA4-C1F3D07E78D5} = {BEFF50E9-EED9-4DD2-A5F3-A707DCD99A17}
 		{05D7C094-E2C9-4CCD-B0D7-85D263254B26} = {331690B3-1DA8-408E-B6A7-A3237310E6AB}
 		{8A2A2059-CB81-4336-8D08-BDCB37901B96} = {BEFF50E9-EED9-4DD2-A5F3-A707DCD99A17}
-		{2CD30C50-6D64-4880-ACDC-D14E6BDF4462} = {BEFF50E9-EED9-4DD2-A5F3-A707DCD99A17}
 		{604152AB-9AB4-4A97-9A09-131F6C040CFD} = {BEFF50E9-EED9-4DD2-A5F3-A707DCD99A17}
 		{25AB0549-E867-4797-B7D3-FE8A7D6E17F6} = {BEFF50E9-EED9-4DD2-A5F3-A707DCD99A17}
 		{BEFF50E9-EED9-4DD2-A5F3-A707DCD99A17} = {331690B3-1DA8-408E-B6A7-A3237310E6AB}
