@@ -3,7 +3,12 @@
   <WorkerRole name="SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker" vmsize="Standard_D1_v2">
     <Runtime executionContext="elevated" />
     <Startup>
-      <Task commandLine="StartUp\IIS.bat" executionContext="elevated" taskType="background">
+      <Task commandLine="StartUp\Startup.cmd" executionContext="elevated" taskType="background">
+        <Environment>
+          <Variable name="TokenServiceCertificateThumbprint">
+            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='TokenServiceCertificateThumbprint']/@value" />
+          </Variable>
+        </Environment>
       </Task>
     </Startup>
     <ConfigurationSettings>
@@ -17,6 +22,9 @@
       <Setting name="DeclarationsEnabled" />
       <Setting name="TokenServiceCertificateThumbprint" />
     </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="TokenServiceCertificate" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
     <Endpoints>
       <InputEndpoint name="Fake" protocol="tcp" port="50121" />
     </Endpoints>
