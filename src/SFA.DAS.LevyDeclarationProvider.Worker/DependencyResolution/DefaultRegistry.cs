@@ -63,7 +63,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResoluti
 
         private void RegisterMapper()
         {
-            var profiles = Assembly.Load("SFA.DAS.EAS.Infrastructure").GetTypes()
+            var profiles = Assembly.Load("SFA.DAS.EmployerLevy.Infrastructure").GetTypes()
                             .Where(t => typeof(Profile).IsAssignableFrom(t))
                             .Select(t => (Profile)Activator.CreateInstance(t));
 
