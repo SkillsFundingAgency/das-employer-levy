@@ -2,10 +2,7 @@
   "$schema": "http://schemastore.org/schemas/json/webjobs-list.json",
   "WebJobs": [
     {
-      "filePath": "../SFA.DAS.EAS.LevyAccountUpdater.WebJob/SFA.DAS.EAS.LevyAccountUpdater.WebJob.csproj"
-    },
-    {
-      "filePath": "../SFA.DAS.EAS.PaymentUpdater.WebJob/SFA.DAS.EAS.PaymentUpdater.WebJob.csproj"
+      "filePath": "../SFA.DAS.EAS.LevyAccountUpdater.WebJob/SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.csproj"
     }
   ]
 }
