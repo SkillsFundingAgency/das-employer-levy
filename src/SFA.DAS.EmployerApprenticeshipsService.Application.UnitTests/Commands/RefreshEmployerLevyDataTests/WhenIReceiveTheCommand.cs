@@ -126,5 +126,19 @@ namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.RefreshEmployerLev
             //Assert
             _levyRepository.Verify(x => x.CreateEmployerDeclarations(It.Is<IEnumerable<DasDeclaration>>(c => c.Count() == 4),ExpectedEmpRef), Times.Once);
         }
+
+        [Test]
+        public async Task ThenTheProcessTopupSchemeIsCalledForEachEmprefToBeUpdated()
+        {
+            //Arrange
+            _levyRepository.Setup(x => x.GetEmployerDeclarationSubmissionIds(ExpectedEmpRef)).ReturnsAsync(new List<long> { 2 });
+
+            //Act
+            await _refreshEmployerLevyDataCommandHandler.Handle(RefreshEmployerLevyDataCommandObjectMother.Create(ExpectedEmpRef));
+
+            //Assert
+            _levyRepository.Verify(x => x.CreateEmployerDeclarations(It.IsAny<IEnumerable<DasDeclaration>>(), ExpectedEmpRef));
+            _levyRepository.Verify(x => x.ProcessTopupsForScheme(ExpectedEmpRef), Times.Once);
+        }
     }
 }

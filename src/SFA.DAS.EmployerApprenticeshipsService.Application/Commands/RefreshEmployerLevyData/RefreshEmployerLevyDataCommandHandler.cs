@@ -46,9 +46,13 @@ namespace SFA.DAS.EmployerLevy.Application.Commands.RefreshEmployerLevyData
 
                 await ProcessEndOfYearAdjustmentDeclarations(declarations, employerLevyData);
 
-                if (!declarations.Any()) continue;
+                if (!declarations.Any())
+                {
+                    continue;
+                }
 
                 await _dasLevyRepository.CreateEmployerDeclarations(declarations, employerLevyData.EmpRef);
+                await _dasLevyRepository.ProcessTopupsForScheme(employerLevyData.EmpRef);
 
                 updatedEmpRefs.Add(employerLevyData.EmpRef);
                 savedDeclarations.AddRange(declarations);
