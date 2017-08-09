@@ -12,5 +12,7 @@ namespace SFA.DAS.EmployerLevy.Domain.Data.Repositories
         Task<DasDeclaration> GetLastSubmissionForScheme(string empRef);
         Task<DasDeclaration> GetSubmissionByEmprefPayrollYearAndMonth(string empRef, string payrollYear, short payrollMonth);
         Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(string empRef);
+
+        Task ProcessTopupsForScheme(string empRef);
     }
 }

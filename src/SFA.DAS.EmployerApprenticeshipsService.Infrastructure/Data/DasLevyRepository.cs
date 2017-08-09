@@ -158,6 +158,18 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
 
             return result;
         }
+
+        public async Task ProcessTopupsForScheme(string empRef)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@empRef", empRef, DbType.String);
+
+            await WithConnection(async c => await c.ExecuteAsync(
+                sql: "[CreateTopUpForScheme]",
+                param: parameters,
+                commandType: CommandType.StoredProcedure));
+        }
+        
     }
 }
 
