@@ -160,6 +160,8 @@
     <Compile Include="Commands\CreateEnglishFractionCalculationDate\CreateEnglishFractionCalculationDateCommand.cs" />
     <Compile Include="Commands\CreateEnglishFractionCalculationDate\CreateEnglishFractionCalculationDateCommandHandler.cs" />
     <Compile Include="Commands\CreateEnglishFractionCalculationDate\CreateEnglishFractionCalculationDateCommandValidator.cs" />
+    <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeCommand.cs" />
+    <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeReferenceValidator.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommand.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommandHandler.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommandResponse.cs" />
