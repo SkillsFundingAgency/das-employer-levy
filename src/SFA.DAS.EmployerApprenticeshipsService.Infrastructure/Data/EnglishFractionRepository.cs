@@ -14,7 +14,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
 {
     public class EnglishFractionRepository : BaseRepository, IEnglishFractionRepository
     {
-        public EnglishFractionRepository(LevyDeclarationProviderConfiguration configuration, ILog logger)
+        public EnglishFractionRepository(EmployerLevyConfiguration configuration, ILog logger)
             : base(configuration.DatabaseConnectionString, logger)
         {
         }

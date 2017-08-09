@@ -20,7 +20,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.HmrcServiceTest
         private const string ExpectedAccessCode = "789654321AGFVD";
 
         private HmrcService _hmrcService;
-        private EmployerApprenticeshipsServiceConfiguration _configuration;
+        private EmployerLevyConfiguration _configuration;
         private Mock<IHttpClientWrapper> _httpClientWrapper;
         
         private Mock<ITokenServiceApiClient> _tokenService;
@@ -29,7 +29,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.HmrcServiceTest
         [SetUp]
         public void Arrange()
         {
-            _configuration = new EmployerApprenticeshipsServiceConfiguration
+            _configuration = new EmployerLevyConfiguration
             {
                 Hmrc = new HmrcConfiguration
                 {

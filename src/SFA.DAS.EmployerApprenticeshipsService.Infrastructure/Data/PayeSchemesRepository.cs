@@ -12,7 +12,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
 {
     public class PayeSchemesRepository : BaseRepository, IPayeSchemesRepository
     {
-        public PayeSchemesRepository(LevyDeclarationProviderConfiguration configuration, ILog logger)
+        public PayeSchemesRepository(EmployerLevyConfiguration configuration, ILog logger)
             : base(configuration.DatabaseConnectionString, logger)
         {
         }

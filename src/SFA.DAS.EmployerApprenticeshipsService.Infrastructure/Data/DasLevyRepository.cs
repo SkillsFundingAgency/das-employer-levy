@@ -15,10 +15,10 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
 {
     public class DasLevyRepository : BaseRepository, IDasLevyRepository
     {
-        private readonly LevyDeclarationProviderConfiguration _configuration;
+        private readonly EmployerLevyConfiguration _configuration;
 
 
-        public DasLevyRepository(LevyDeclarationProviderConfiguration configuration, ILog logger)
+        public DasLevyRepository(EmployerLevyConfiguration configuration, ILog logger)
             : base(configuration.DatabaseConnectionString, logger)
         {
             _configuration = configuration;

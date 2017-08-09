@@ -26,9 +26,9 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResoluti
                 scan.RegisterConcreteTypesAgainstTheFirstInterface();
             });
             
-            For<IConfiguration>().Use<LevyDeclarationProviderConfiguration>();
+            For<IConfiguration>().Use<EmployerLevyConfiguration>();
 
-            var config = ConfigurationHelper.GetConfiguration<EmployerApprenticeshipsServiceConfiguration>("SFA.DAS.EmployerApprenticeshipsService");
+            var config = ConfigurationHelper.GetConfiguration<EmployerLevyConfiguration>("SFA.DAS.EmployerApprenticeshipsService");
             For<IEventsApi>().Use<EventsApi>()
                .Ctor<IEventsApiClientConfiguration>().Is(config.EventsApi)
                .SelectConstructor(() => new EventsApi(null)); // The default one isn't the one we want to use.;
@@ -47,10 +47,6 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResoluti
             For<Infrastructure.ExecutionPolicies.ExecutionPolicy>()
                 .Use<Infrastructure.ExecutionPolicies.HmrcExecutionPolicy>()
                 .Named(Infrastructure.ExecutionPolicies.HmrcExecutionPolicy.Name);
-
-            For<Infrastructure.ExecutionPolicies.ExecutionPolicy>()
-                .Use<Infrastructure.ExecutionPolicies.IdamsExecutionPolicy>()
-                .Named(Infrastructure.ExecutionPolicies.IdamsExecutionPolicy.Name);
         }
 
         private void AddMediatrRegistrations()

@@ -10,7 +10,7 @@ namespace SFA.DAS.EmployerLevy.TestCommon.DbCleanup
 {
     public class UpdateTransactionLine : BaseRepository, IUpdateTransactionLine
     {
-        public UpdateTransactionLine(LevyDeclarationProviderConfiguration configuration, ILog logger) : base(configuration.DatabaseConnectionString, logger)
+        public UpdateTransactionLine(EmployerLevyConfiguration configuration, ILog logger) : base(configuration.DatabaseConnectionString, logger)
         {
         }
 

@@ -27,7 +27,7 @@ namespace SFA.DAS.EmployerLevy.TestCommon.DependencyResolution
                 scan.RegisterConcreteTypesAgainstTheFirstInterface();
             });
 
-            For<IConfiguration>().Use<LevyDeclarationProviderConfiguration>();
+            For<IConfiguration>().Use<EmployerLevyConfiguration>();
             For<IEventsApi>().Use(eventApi ?? Mock.Of<IEventsApi>()); 
             For<ILog>().Use(Mock.Of<ILog>());
             For<IMessagePublisher>().Use(messagePublisher);
@@ -48,10 +48,6 @@ namespace SFA.DAS.EmployerLevy.TestCommon.DependencyResolution
             For<Infrastructure.ExecutionPolicies.ExecutionPolicy>()
                 .Use<Infrastructure.ExecutionPolicies.HmrcExecutionPolicy>()
                 .Named(Infrastructure.ExecutionPolicies.HmrcExecutionPolicy.Name);
-
-            For<Infrastructure.ExecutionPolicies.ExecutionPolicy>()
-                .Use<Infrastructure.ExecutionPolicies.IdamsExecutionPolicy>()
-                .Named(Infrastructure.ExecutionPolicies.IdamsExecutionPolicy.Name);
         }
 
         private void AddMediatrRegistrations()

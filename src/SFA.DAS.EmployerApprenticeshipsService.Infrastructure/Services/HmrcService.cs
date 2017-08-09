@@ -18,7 +18,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Services
 {
     public class HmrcService : IHmrcService
     {
-        private readonly EmployerApprenticeshipsServiceConfiguration _configuration;
+        private readonly EmployerLevyConfiguration _configuration;
         private readonly IHttpClientWrapper _httpClientWrapper;
         private readonly ITokenServiceApiClient _tokenServiceApiClient;
         private readonly ExecutionPolicy _executionPolicy;
@@ -26,7 +26,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Services
         private readonly IAzureAdAuthenticationService _azureAdAuthenticationService;
 
 
-        public HmrcService(EmployerApprenticeshipsServiceConfiguration configuration, IHttpClientWrapper httpClientWrapper, ITokenServiceApiClient tokenServiceApiClient, [RequiredPolicy(HmrcExecutionPolicy.Name)] ExecutionPolicy executionPolicy, ICacheProvider cacheProvider, IAzureAdAuthenticationService azureAdAuthenticationService)
+        public HmrcService(EmployerLevyConfiguration configuration, IHttpClientWrapper httpClientWrapper, ITokenServiceApiClient tokenServiceApiClient, [RequiredPolicy(HmrcExecutionPolicy.Name)] ExecutionPolicy executionPolicy, ICacheProvider cacheProvider, IAzureAdAuthenticationService azureAdAuthenticationService)
         {
             _configuration = configuration;
             _httpClientWrapper = httpClientWrapper;

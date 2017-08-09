@@ -15,7 +15,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.HmrcServiceTest
     public class WhenICallTheHmrcServiceForAuthentication
     {
         private HmrcService _hmrcService;
-        private EmployerApprenticeshipsServiceConfiguration _configuration;
+        private EmployerLevyConfiguration _configuration;
         private string ExpectedBaseUrl = "http://hmrcbase.gov.uk/";
         private string ExpectedClientId = "654321";
         private string ExpectedOgdClientId = "123456789";
@@ -28,7 +28,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.HmrcServiceTest
         [SetUp]
         public void Arrange()
         {
-            _configuration = new EmployerApprenticeshipsServiceConfiguration
+            _configuration = new EmployerLevyConfiguration
             {
                 Hmrc = new HmrcConfiguration
                 {

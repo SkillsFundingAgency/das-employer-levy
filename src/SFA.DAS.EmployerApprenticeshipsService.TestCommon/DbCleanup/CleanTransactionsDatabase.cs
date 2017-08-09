@@ -9,7 +9,7 @@ namespace SFA.DAS.EmployerLevy.TestCommon.DbCleanup
 {
     public class CleanTransactionsDatabase : BaseRepository, ICleanTransactionsDatabase
     {
-        public CleanTransactionsDatabase(LevyDeclarationProviderConfiguration configuration, ILog logger) : base(configuration.DatabaseConnectionString, logger)
+        public CleanTransactionsDatabase(EmployerLevyConfiguration configuration, ILog logger) : base(configuration.DatabaseConnectionString, logger)
         {
         }
 

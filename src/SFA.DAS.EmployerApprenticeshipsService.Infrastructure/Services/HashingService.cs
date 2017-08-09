@@ -11,7 +11,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Services
         private const string Hashstring = "SFA: digital apprenticeship service";
         private const string AllowedCharacters = "46789BCDFGHJKLMNPRSTVWXY";
 
-        public HashingService(EmployerApprenticeshipsServiceConfiguration configuration)
+        public HashingService(EmployerLevyConfiguration configuration)
         {
             var hashstring = string.IsNullOrEmpty(configuration.Hashstring) 
                     ? Hashstring 

@@ -161,7 +161,7 @@
     <Compile Include="Configuration\EmployerApprenticeshipsServiceConfiguration.cs" />
     <Compile Include="Configuration\HmrcConfiguration.cs" />
     <Compile Include="Configuration\IdentityServerConfiguration.cs" />
-    <Compile Include="Configuration\LevyDeclarationProviderConfiguration.cs" />
+    <Compile Include="Configuration\EmployerLevyConfiguration.cs" />
     <Compile Include="Configuration\NotificationsApiClientConfiguration.cs" />
     <Compile Include="Configuration\EventsApiClientConfiguration.cs" />
     <Compile Include="Data\Repositories\IEnglishFractionRepository.cs" />

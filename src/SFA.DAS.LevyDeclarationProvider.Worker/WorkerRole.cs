@@ -40,10 +40,9 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker
 
             _container = new Container(c =>
             {
-                c.Policies.Add(new ConfigurationPolicy<LevyDeclarationProviderConfiguration>("SFA.DAS.LevyAggregationProvider"));
-                c.Policies.Add(new ConfigurationPolicy<EmployerApprenticeshipsServiceConfiguration>("SFA.DAS.EmployerApprenticeshipsService"));
+                c.Policies.Add(new ConfigurationPolicy<EmployerLevyConfiguration>("SFA.DAS.EmployerLevy"));
                 c.Policies.Add(new ConfigurationPolicy<TokenServiceApiClientConfiguration>("SFA.DAS.TokenServiceApiClient"));
-                c.Policies.Add(new MessagePolicy<EmployerApprenticeshipsServiceConfiguration>("SFA.DAS.EmployerApprenticeshipsService"));
+                c.Policies.Add(new MessagePolicy<EmployerLevyConfiguration>("SFA.DAS.EmployerLevy"));
                 c.Policies.Add(new ExecutionPolicyPolicy());
                 c.AddRegistry<DefaultRegistry>();
             });

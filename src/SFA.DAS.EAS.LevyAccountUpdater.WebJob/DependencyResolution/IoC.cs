@@ -23,14 +23,14 @@ using StructureMap;
 namespace SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.DependencyResolution {
     public static class IoC
     {
-        private const string ServiceName = "SFA.DAS.EmployerApprenticeshipsService";
+        private const string ServiceName = "SFA.DAS.EmployerLevy";
 
         public static IContainer Initialize()
         {
             return new Container(c =>
             {
-                c.Policies.Add(new ConfigurationPolicy<EmployerApprenticeshipsServiceConfiguration>(ServiceName));
-                c.Policies.Add(new MessagePolicy<EmployerApprenticeshipsServiceConfiguration>(ServiceName));
+                c.Policies.Add(new ConfigurationPolicy<EmployerLevyConfiguration>(ServiceName));
+                c.Policies.Add(new MessagePolicy<EmployerLevyConfiguration>(ServiceName));
                 c.AddRegistry<DefaultRegistry>();
             });
         }

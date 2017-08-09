@@ -22,13 +22,13 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.UnitTests.Services.HmrcServiceTest
 
         private Mock<IHttpClientWrapper> _httpClientWrapper;
         private HmrcService _hmrcService;
-        private EmployerApprenticeshipsServiceConfiguration _configuration;
+        private EmployerLevyConfiguration _configuration;
         private Mock<ITokenServiceApiClient> _tokenService;
 
         [SetUp]
         public void Arrange()
         {
-            _configuration = new EmployerApprenticeshipsServiceConfiguration
+            _configuration = new EmployerLevyConfiguration
             {
                 Hmrc = new HmrcConfiguration
                 {

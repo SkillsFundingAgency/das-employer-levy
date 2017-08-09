@@ -18,7 +18,7 @@ namespace SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.DependencyResolution
                     scan.RegisterConcreteTypesAgainstTheFirstInterface();
                 });
 
-            For<IConfiguration>().Use<EmployerApprenticeshipsServiceConfiguration>();
+            For<IConfiguration>().Use<EmployerLevyConfiguration>();
             For<IAccountUpdater>().Use<AccountUpdater>();
 
             RegisterLogger();
