@@ -157,12 +157,8 @@
     <Compile Include="Configuration\TokenServiceApiClientConfiguration.cs" />
     <Compile Include="Attributes\QueueNameAttribute.cs" />
     <Compile Include="Configuration\AuditApiClientConfiguration.cs" />
-    <Compile Include="Configuration\ClaimIdentifierConfiguration.cs" />
-    <Compile Include="Configuration\EmployerApprenticeshipsServiceConfiguration.cs" />
     <Compile Include="Configuration\HmrcConfiguration.cs" />
-    <Compile Include="Configuration\IdentityServerConfiguration.cs" />
     <Compile Include="Configuration\EmployerLevyConfiguration.cs" />
-    <Compile Include="Configuration\NotificationsApiClientConfiguration.cs" />
     <Compile Include="Configuration\EventsApiClientConfiguration.cs" />
     <Compile Include="Data\Repositories\IEnglishFractionRepository.cs" />
     <Compile Include="Data\Repositories\IDasLevyRepository.cs" />
