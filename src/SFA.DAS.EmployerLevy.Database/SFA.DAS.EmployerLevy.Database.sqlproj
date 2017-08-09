@@ -82,6 +82,10 @@
     <Build Include="StoredProcedures\GetPayeSchemes.sql" />
     <Build Include="Views\GetLevyDeclaration.sql" />
     <Build Include="Views\GetLevyDeclarationAndTopUp.sql" />
+    <Build Include="StoredProcedures\CreateTopUpForScheme.sql" />
+    <PostDeploy Include="SeedData\PostDeploymentRules.sql" />
+    <None Include="SeedData\SeedData.sql" />
+    <None Include="SeedData\SeedProdData.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
