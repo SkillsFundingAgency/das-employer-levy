@@ -22,7 +22,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
             var result = await WithConnection(async c =>
             {
                 return await c.QueryAsync<string>(
-                    sql: "[employer_levy].[GetPayeSchemes]",
+                    sql: "[GetPayeSchemes]",
                     commandType: CommandType.StoredProcedure);
             });
 

@@ -22,7 +22,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
         public async Task<DateTime> GetLastUpdateDate()
         {
             var result = await WithConnection(async c => await c.QueryAsync<DateTime>(
-                sql: "SELECT Top(1) DateCalculated FROM [employer_levy].[EnglishFractionCalculationDate] ORDER BY DateCalculated DESC;",
+                sql: "SELECT Top(1) DateCalculated FROM [EnglishFractionCalculationDate] ORDER BY DateCalculated DESC;",
                 commandType: CommandType.Text));
 
             return result.FirstOrDefault();
@@ -36,7 +36,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
                 parameters.Add("@dateCalculated", dateUpdated, DbType.Date);
 
                 return await c.ExecuteAsync(
-                    sql: "INSERT INTO [employer_levy].[EnglishFractionCalculationDate] (DateCalculated) VALUES (@dateCalculated);",
+                    sql: "INSERT INTO [EnglishFractionCalculationDate] (DateCalculated) VALUES (@dateCalculated);",
                     param: parameters,
                     commandType: CommandType.Text);
             });
@@ -50,7 +50,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
                 parameters.Add("@empRef", employerReference, DbType.String);
 
                 return await c.QueryAsync<DasEnglishFraction>(
-                    sql: "SELECT * FROM [employer_levy].[EnglishFraction] WHERE EmpRef = @empRef ORDER BY DateCalculated desc;",
+                    sql: "SELECT * FROM [EnglishFraction] WHERE EmpRef = @empRef ORDER BY DateCalculated desc;",
                     param: parameters,
                     commandType: CommandType.Text);
             });
@@ -68,7 +68,7 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
                 parameters.Add("@dateCalculated", fractions.DateCalculated, DbType.DateTime);
 
                 return await c.ExecuteAsync(
-                    sql: "INSERT INTO [employer_levy].[EnglishFraction] (EmpRef, DateCalculated, Amount) VALUES (@empRef, @dateCalculated, @amount);",
+                    sql: "INSERT INTO [EnglishFraction] (EmpRef, DateCalculated, Amount) VALUES (@empRef, @dateCalculated, @amount);",
                     param: parameters,
                     commandType: CommandType.Text);
             });
