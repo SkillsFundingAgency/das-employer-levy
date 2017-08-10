@@ -163,6 +163,7 @@
     <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeCommand.cs" />
     <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeCommandHandler.cs" />
     <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeReferenceValidator.cs" />
+    <Compile Include="Commands\DeletePayeSchemeReference\DeletePayeSchemeCommandHandler.cs" />
     <Compile Include="Commands\DeletePayeSchemeReference\DeletePayeSchemeValidator.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommand.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommandHandler.cs" />

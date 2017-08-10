@@ -180,6 +180,17 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
                 param: parameters,
                 commandType: CommandType.StoredProcedure));
         }
+
+        public async Task DeletePayeSchemeReference(string empRef)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@empRef", empRef, DbType.String);
+
+            await WithConnection(async c => await c.ExecuteAsync(
+                sql: "[DeletePayeScheme]",
+                param: parameters,
+                commandType: CommandType.StoredProcedure));
+        }
     }
 }
 

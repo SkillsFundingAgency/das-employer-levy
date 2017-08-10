@@ -15,5 +15,6 @@ namespace SFA.DAS.EmployerLevy.Domain.Data.Repositories
 
         Task ProcessTopupsForScheme(string empRef);
         Task UpsertPayeSchemeReference(string empRef);
+        Task DeletePayeSchemeReference(string empRef);
     }
 }

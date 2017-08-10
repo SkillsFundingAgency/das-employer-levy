@@ -87,6 +87,7 @@
     <None Include="SeedData\SeedData.sql" />
     <None Include="SeedData\SeedProdData.sql" />
     <Build Include="StoredProcedures\UpsertPayeScheme.sql" />
+    <Build Include="StoredProcedures\DeletePayeScheme.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
