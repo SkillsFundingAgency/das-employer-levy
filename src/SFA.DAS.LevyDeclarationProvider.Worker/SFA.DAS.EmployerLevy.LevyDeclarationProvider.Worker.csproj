@@ -191,8 +191,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ILevyDeclaration.cs" />
     <Compile Include="Providers\IPayeSchemeAdded.cs" />
+    <Compile Include="Providers\IDeletePayeScheme.cs" />
     <Compile Include="Providers\LevyDeclaration.cs" />
     <Compile Include="Providers\PayeSchemeAdded.cs" />
+    <Compile Include="Providers\DeleteDeletePayeScheme.cs" />
     <Compile Include="WorkerRole.cs" />
   </ItemGroup>
   <ItemGroup>
