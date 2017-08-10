@@ -3,8 +3,10 @@ using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using SFA.DAS.EmployerLevy.Application.Commands.CreatePayeSchemeReference;
+using SFA.DAS.EmployerLevy.Application.Messages;
 using SFA.DAS.EmployerLevy.Application.Validation;
 using SFA.DAS.EmployerLevy.Domain.Data.Repositories;
+using SFA.DAS.Messaging;
 
 namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.CreatePayeSchemeReferenceTests
 {
@@ -13,6 +15,7 @@ namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.CreatePayeSchemeRe
         private CreatePayeSchemeCommandHandler _handler;
         private Mock<IValidator<CreatePayeSchemeCommand>> _validator;
         private Mock<IDasLevyRepository> _dasLevyRepository;
+        private Mock<IMessagePublisher> _messagePublisher;
 
         [SetUp]
         public void Arrange()
@@ -21,7 +24,9 @@ namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.CreatePayeSchemeRe
             _validator.Setup(x => x.Validate(It.IsAny<CreatePayeSchemeCommand>())).Returns(new ValidationResult {ValidationDictionary = new Dictionary<string, string>()});
             _dasLevyRepository = new Mock<IDasLevyRepository>();
 
-            _handler = new CreatePayeSchemeCommandHandler(_validator.Object, _dasLevyRepository.Object);
+            _messagePublisher = new Mock<IMessagePublisher>();
+
+            _handler = new CreatePayeSchemeCommandHandler(_validator.Object, _dasLevyRepository.Object, _messagePublisher.Object);
         }
 
         [Test]
@@ -58,6 +63,19 @@ namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.CreatePayeSchemeRe
 
             //Assert
             _dasLevyRepository.Verify(x => x.UpsertPayeSchemeReference(It.IsAny<string>()), Times.Never);
+        }
+
+        [Test]
+        public async Task ThenAMessageIsAddedToTheQueueToGetTheLevy()
+        {
+            //Arrange
+            var expectedEmpRef = "123GBH";
+
+            //Act
+            await _handler.Handle(new CreatePayeSchemeCommand { EmpRef = expectedEmpRef });
+
+            //Assert
+            _messagePublisher.Verify(x=>x.PublishAsync(It.Is<AddPayeSchemeMessage>(c=>c.EmpRef.Equals(expectedEmpRef))),Times.Once);
         }
     }
 }
