@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Threading;
@@ -27,12 +26,13 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker
 
             try
             {
-                
                 var levyDeclaration = _container.GetInstance<ILevyDeclaration>();
                 var payeSchemeAdded = _container.GetInstance<IPayeSchemeAdded>();
+                var deletePayeScheme = _container.GetInstance<IDeletePayeScheme>();
                 
                 Task.Run(() => levyDeclaration.RunAsync(_cancellationTokenSource.Token));
                 Task.Run(() => payeSchemeAdded.RunAsync(_cancellationTokenSource.Token));
+                Task.Run(() => deletePayeScheme.RunAsync(_cancellationTokenSource.Token));
 
                 Task.WaitAll();
             }
