@@ -19,12 +19,9 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
 
         public async Task<List<string>> GetPayeSchemes()
         {
-            var result = await WithConnection(async c =>
-            {
-                return await c.QueryAsync<string>(
-                    sql: "[GetPayeSchemes]",
-                    commandType: CommandType.StoredProcedure);
-            });
+            var result = await WithConnection(async c => await c.QueryAsync<string>(
+                sql: "[GetPayeSchemes]",
+                commandType: CommandType.StoredProcedure));
 
             return result.ToList();
         }
