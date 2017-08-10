@@ -2,11 +2,11 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using NLog;
 using SFA.DAS.EmployerLevy.Application.Commands.CreatePayeSchemeReference;
 using SFA.DAS.EmployerLevy.Application.Messages;
 using SFA.DAS.EmployerLevy.Domain.Attributes;
 using SFA.DAS.Messaging;
+using SFA.DAS.NLog.Logger;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
@@ -17,9 +17,9 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 
         private readonly IPollingMessageReceiver _pollingMessageReceiver;
         private readonly IMediator _mediator;
-        private readonly ILogger _logger;
+        private readonly ILog _logger;
 
-        public PayeSchemeAdded(IPollingMessageReceiver pollingMessageReceiver, IMediator mediator, ILogger logger)
+        public PayeSchemeAdded(IPollingMessageReceiver pollingMessageReceiver, IMediator mediator, ILog logger)
         {
             _pollingMessageReceiver = pollingMessageReceiver;
             _mediator = mediator;

@@ -4,13 +4,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Moq;
-using NLog;
 using NUnit.Framework;
 using SFA.DAS.EmployerLevy.Application.Commands.CreatePayeSchemeReference;
 using SFA.DAS.EmployerLevy.Application.Messages;
 using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers;
 using SFA.DAS.Messaging;
 using SFA.DAS.Messaging.FileSystem;
+using SFA.DAS.NLog.Logger;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Providers.PayeSchemeAddedTests
 {
@@ -19,7 +19,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
         private PayeSchemeAdded _payeSchemeAdded;
         private Mock<IPollingMessageReceiver> _pollingMessageReceiver;
         private Mock<IMediator> _mediator;
-        private Mock<ILogger> _logger;
+        private Mock<ILog> _logger;
         private CancellationTokenSource _cancellationTokenSource;
 
         private const string ExpectedEmpRef = "123RFVG";
@@ -38,7 +38,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
 
             _mediator = new Mock<IMediator>();
 
-            _logger = new Mock<ILogger>();
+            _logger = new Mock<ILog>();
 
             _payeSchemeAdded = new PayeSchemeAdded(_pollingMessageReceiver.Object, _mediator.Object, _logger.Object);
         }
@@ -92,5 +92,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
             //Assert
             _logger.Verify(x=>x.Fatal(It.IsAny<Exception>(), It.IsAny<string>()));
         }
+
+        
     }
 }
