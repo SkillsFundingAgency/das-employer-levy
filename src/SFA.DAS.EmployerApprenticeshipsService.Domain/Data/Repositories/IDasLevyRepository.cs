@@ -14,5 +14,6 @@ namespace SFA.DAS.EmployerLevy.Domain.Data.Repositories
         Task<IEnumerable<DasEnglishFraction>> GetEnglishFractionHistory(string empRef);
 
         Task ProcessTopupsForScheme(string empRef);
+        Task UpsertPayeSchemeReference(string empRef);
     }
 }

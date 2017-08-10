@@ -169,7 +169,11 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
                 param: parameters,
                 commandType: CommandType.StoredProcedure));
         }
-        
+
+        public Task UpsertPayeSchemeReference(string empRef)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
