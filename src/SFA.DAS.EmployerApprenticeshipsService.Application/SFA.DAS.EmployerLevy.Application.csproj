@@ -176,6 +176,7 @@
     <Compile Include="Factories\ILevyEventFactory.cs" />
     <Compile Include="Factories\IGenericEventFactory.cs" />
     <Compile Include="InvalidRequestException.cs" />
+    <Compile Include="Messages\AddPayeSchemeMessage.cs" />
     <Compile Include="Messages\EmployerRefreshLevyQueueMessage.cs" />
     <Compile Include="NotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
