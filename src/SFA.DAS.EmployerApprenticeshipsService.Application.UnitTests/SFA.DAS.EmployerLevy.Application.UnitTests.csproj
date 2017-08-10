@@ -150,6 +150,7 @@
     <Compile Include="Commands\AuditCommandTests\WhenIValidateTheCommand.cs" />
     <Compile Include="Commands\CreatePayeSchemeReferenceTests\WhenIProcessTheCommand.cs" />
     <Compile Include="Commands\CreatePayeSchemeReferenceTests\WhenIValidateTheCommand.cs" />
+    <Compile Include="Commands\DeletePayeSchemeTests\WhenIValidateTheCommand.cs" />
     <Compile Include="Commands\UpdateEnglishFractions\WhenISendTheUpdateEnglishFractionsCommand.cs" />
     <Compile Include="Factories\LevyEventFactoryTests\WhenICreateAnEvent.cs" />
     <Compile Include="FakeTimeProvider.cs" />

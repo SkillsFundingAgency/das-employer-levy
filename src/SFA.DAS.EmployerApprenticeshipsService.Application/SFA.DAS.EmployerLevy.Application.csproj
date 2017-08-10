@@ -163,12 +163,14 @@
     <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeCommand.cs" />
     <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeCommandHandler.cs" />
     <Compile Include="Commands\CreatePayeSchemeReference\CreatePayeSchemeReferenceValidator.cs" />
+    <Compile Include="Commands\DeletePayeSchemeReference\DeletePayeSchemeValidator.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommand.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommandHandler.cs" />
     <Compile Include="Commands\PublishGenericEvent\PublishGenericEventCommandResponse.cs" />
     <Compile Include="Commands\RefreshEmployerLevyData\RefreshEmployerLevyDataCommandHandler.cs" />
     <Compile Include="Commands\RefreshEmployerLevyData\RefreshEmployerLevyDataCommand.cs" />
     <Compile Include="Commands\RefreshEmployerLevyData\RefreshEmployerLevyDataCommandValidator.cs" />
+    <Compile Include="Commands\DeletePayeSchemeReference\DeletePayeSchemeCommand.cs" />
     <Compile Include="Commands\UpdateEnglishFractions\UpdateEnglishFractionsCommand.cs" />
     <Compile Include="Commands\UpdateEnglishFractions\UpdateEnglishFractionsCommandHandler.cs" />
     <Compile Include="Factories\LevyEventFactory.cs" />
