@@ -1,3 +1,3 @@
 ﻿CREATE PROCEDURE [GetPayeSchemes]
 AS
-	SELECT EmpRef FROM [PayeSchemes]
+	SELECT EmpRef FROM [PayeScheme]

@@ -71,7 +71,7 @@
     <Build Include="Tables\EnglishFractionOverride.sql" />
     <Build Include="Tables\LevyDeclaration.sql" />
     <Build Include="Tables\LevyDeclarationTopup.sql" />
-    <Build Include="Tables\PayeSchemes.sql" />
+    <Build Include="Tables\PayeScheme.sql" />
     <Build Include="Tables\TopUpPercentage.sql" />
     <Build Include="StoredProcedures\Cleardown.sql" />
     <Build Include="StoredProcedures\CreateDeclaration.sql" />
@@ -86,6 +86,7 @@
     <PostDeploy Include="SeedData\PostDeploymentRules.sql" />
     <None Include="SeedData\SeedData.sql" />
     <None Include="SeedData\SeedProdData.sql" />
+    <Build Include="StoredProcedures\UpsertPayeScheme.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />

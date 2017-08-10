@@ -170,9 +170,15 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.Data
                 commandType: CommandType.StoredProcedure));
         }
 
-        public Task UpsertPayeSchemeReference(string empRef)
+        public async Task UpsertPayeSchemeReference(string empRef)
         {
-            throw new NotImplementedException();
+            var parameters = new DynamicParameters();
+            parameters.Add("@empRef", empRef, DbType.String);
+
+            await WithConnection(async c => await c.ExecuteAsync(
+                sql: "[UpsertPayeScheme]",
+                param: parameters,
+                commandType: CommandType.StoredProcedure));
         }
     }
 }

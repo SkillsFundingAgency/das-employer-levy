@@ -1,4 +1,4 @@
-﻿CREATE TABLE [PayeSchemes]
+﻿CREATE TABLE [PayeScheme]
 (
 	[EmpRef] NVARCHAR(50) NOT NULL PRIMARY KEY
 )
