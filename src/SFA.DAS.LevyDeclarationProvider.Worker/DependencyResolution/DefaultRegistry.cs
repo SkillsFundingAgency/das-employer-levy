@@ -28,7 +28,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResoluti
             
             For<IConfiguration>().Use<EmployerLevyConfiguration>();
 
-            var config = ConfigurationHelper.GetConfiguration<EmployerLevyConfiguration>("SFA.DAS.EmployerApprenticeshipsService");
+            var config = ConfigurationHelper.GetConfiguration<EmployerLevyConfiguration>("SFA.DAS.EmployerLevy");
             For<IEventsApi>().Use<EventsApi>()
                .Ctor<IEventsApiClientConfiguration>().Is(config.EventsApi)
                .SelectConstructor(() => new EventsApi(null)); // The default one isn't the one we want to use.;

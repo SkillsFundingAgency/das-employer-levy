@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using SFA.DAS.EmployerLevy.Domain.Configuration;
 using SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution;
@@ -21,12 +23,18 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker
         {
             LoggingConfig.ConfigureLogging();
 
-            Trace.TraceInformation("SFA.DAS.LevyDeclarationProvider.Worker is running");
+            Trace.TraceInformation("SFA.DAS.EmployerLevy.Worker is running");
 
             try
             {
+                
                 var levyDeclaration = _container.GetInstance<ILevyDeclaration>();
-                levyDeclaration.RunAsync(_cancellationTokenSource.Token).Wait();
+                var payeSchemeAdded = _container.GetInstance<IPayeSchemeAdded>();
+                
+                Task.Run(() => levyDeclaration.RunAsync(_cancellationTokenSource.Token));
+                Task.Run(() => payeSchemeAdded.RunAsync(_cancellationTokenSource.Token));
+
+                Task.WaitAll();
             }
             finally
             {
