@@ -75,7 +75,7 @@ namespace SFA.DAS.EmployerLevy.Application.UnitTests.Commands.CreatePayeSchemeRe
             await _handler.Handle(new CreatePayeSchemeCommand { EmpRef = expectedEmpRef });
 
             //Assert
-            _messagePublisher.Verify(x=>x.PublishAsync(It.Is<AddPayeSchemeMessage>(c=>c.EmpRef.Equals(expectedEmpRef))),Times.Once);
+            _messagePublisher.Verify(x=>x.PublishAsync(It.Is<EmployerRefreshLevyQueueMessage>(c=>c.PayeRef.Equals(expectedEmpRef))),Times.Once);
         }
     }
 }

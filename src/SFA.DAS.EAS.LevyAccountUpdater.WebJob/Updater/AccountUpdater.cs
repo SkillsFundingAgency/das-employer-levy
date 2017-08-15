@@ -17,7 +17,7 @@ namespace SFA.DAS.EmployerLevy.LevyAccountUpdater.WebJob.Updater
         private readonly ILog _logger;
         private readonly IPayeSchemesRepository _payeSchemesRepository;
 
-        [QueueName]
+        [QueueName("employer_levy")]
         public string get_employer_levy { get; set; }
 
         public AccountUpdater(IMessagePublisher messagePublisher, ILog logger, IPayeSchemesRepository payeSchemesRepository)

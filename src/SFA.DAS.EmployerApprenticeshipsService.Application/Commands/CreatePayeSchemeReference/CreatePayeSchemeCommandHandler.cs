@@ -10,7 +10,7 @@ namespace SFA.DAS.EmployerLevy.Application.Commands.CreatePayeSchemeReference
 {
     public class CreatePayeSchemeCommandHandler : AsyncRequestHandler<CreatePayeSchemeCommand>
     {
-        [QueueName]
+        [QueueName("employer_levy")]
         public string get_employer_levy { get; set; }
 
         private readonly IValidator<CreatePayeSchemeCommand> _validator;
@@ -35,7 +35,7 @@ namespace SFA.DAS.EmployerLevy.Application.Commands.CreatePayeSchemeReference
 
             await _dasLevyRepository.UpsertPayeSchemeReference(message.EmpRef);
 
-            await _messagePublisher.PublishAsync(new AddPayeSchemeMessage {EmpRef = message.EmpRef});
+            await _messagePublisher.PublishAsync(new EmployerRefreshLevyQueueMessage {PayeRef = message.EmpRef});
         }
     }
 }

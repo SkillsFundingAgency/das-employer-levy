@@ -18,7 +18,7 @@ namespace SFA.DAS.EmployerLevy.TestCommon.ScenarioCommonSteps
 {
     public class LevyWorkerSteps : IDisposable
     {
-        [QueueName]
+        [QueueName("employer_levy")]
         public string get_employer_levy { get; set; }
 
         private readonly IContainer _container;

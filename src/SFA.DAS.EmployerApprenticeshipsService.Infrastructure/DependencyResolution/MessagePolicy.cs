@@ -47,15 +47,28 @@ namespace SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution
                     var configurationService = new ConfigurationService(GetConfigurationRepository(), new ConfigurationOptions(_serviceName, environment, "1.0"));
 
                     var config = configurationService.Get<T>();
-                    if (string.IsNullOrEmpty(config.ServiceBusConnectionString))
+                    var serviceBusConnectionString = "";
+
+                    if (queueName.CustomAttributes?.FirstOrDefault()?.ConstructorArguments.FirstOrDefault().Value != null)
+                    {
+                        var connectionKey = queueName.CustomAttributes?.FirstOrDefault()?.ConstructorArguments.FirstOrDefault().Value.ToString();
+                        if (!string.IsNullOrWhiteSpace(connectionKey))
+                        {
+                            serviceBusConnectionString = config.ServiceBusConnectionStrings[connectionKey];
+                        }
+                    }
+
+
+                    if (string.IsNullOrEmpty(serviceBusConnectionString))
                     {
                         var queueFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                         instance.Dependencies.AddForConstructorParameter(messagePublisher, new FileSystemMessageService(Path.Combine(queueFolder, queueName.Name)));
                     }
                     else
                     {
-                        instance.Dependencies.AddForConstructorParameter(messagePublisher, new AzureServiceBusMessageService(config.ServiceBusConnectionString, queueName.Name));
-                    }   
+
+                        instance.Dependencies.AddForConstructorParameter(messagePublisher, new AzureServiceBusMessageService(serviceBusConnectionString, queueName.Name));
+                    }
                 }
             }
         }

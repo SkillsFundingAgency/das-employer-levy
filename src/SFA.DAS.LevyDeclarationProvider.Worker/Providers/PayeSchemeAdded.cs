@@ -12,7 +12,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
     public class PayeSchemeAdded : IPayeSchemeAdded
     {
-        [QueueName]
+        [QueueName("employer_shared")]
         public string add_paye_scheme { get; set; }
 
         private readonly IPollingMessageReceiver _pollingMessageReceiver;

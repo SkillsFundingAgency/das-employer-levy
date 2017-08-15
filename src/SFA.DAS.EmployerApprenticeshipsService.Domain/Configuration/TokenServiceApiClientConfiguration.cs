@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Azure;
 using SFA.DAS.EmployerLevy.Domain.Interfaces;
@@ -38,6 +39,6 @@ namespace SFA.DAS.EmployerLevy.Domain.Configuration
             set { } 
         }
         public string DatabaseConnectionString { get; set; }
-        public string ServiceBusConnectionString { get; set; }
+        public Dictionary<string, string> ServiceBusConnectionStrings { get; set; }
     }
 }

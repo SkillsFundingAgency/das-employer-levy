@@ -1,4 +1,5 @@
-﻿using SFA.DAS.Audit.Client;
+﻿using System.Collections.Generic;
+using SFA.DAS.Audit.Client;
 using SFA.DAS.EmployerLevy.Domain.Interfaces;
 
 namespace SFA.DAS.EmployerLevy.Domain.Configuration
@@ -11,6 +12,6 @@ namespace SFA.DAS.EmployerLevy.Domain.Configuration
         public string IdentifierUri { get; set; }
         public string Tenant { get; set; }
         public string DatabaseConnectionString { get; set; }
-        public string ServiceBusConnectionString { get; set; }
+        public Dictionary<string, string> ServiceBusConnectionStrings { get; set; }
     }
 }
