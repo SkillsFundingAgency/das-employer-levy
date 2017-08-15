@@ -14,32 +14,17 @@
       <Setting name="TokenServiceCertificateThumbprint" value="__TokenServiceCertificateThumbprint__" />
     </ConfigurationSettings>
     <Certificates>
-      <Certificate name="TokenServiceCertificate" thumbprint="E280E23D933FE3A62AF335BE9768A2C9D65CCC9A" thumbprintAlgorithm="sha1" />
+      <Certificate name="TokenServiceCertificate" thumbprint="F2071ABFB360B0956E95EDCB47BBBA731F50DBAA" thumbprintAlgorithm="sha1" />
     </Certificates>
   </Role>
   <NetworkConfiguration>
     <VirtualNetworkSite name="__vnet__" />
     <AddressAssignments>
-      <InstanceAddress roleName="SFA.DAS.EAS.Web">
-        <Subnets>
-          <Subnet name="__subnet__" />
-        </Subnets>
-      </InstanceAddress>
-      <InstanceAddress roleName="SFA.DAS.EAS.LevyDeclarationProvider.Worker">
-        <Subnets>
-          <Subnet name="__subnet__" />
-        </Subnets>
-      </InstanceAddress>
-      <InstanceAddress roleName="SFA.DAS.EAS.PaymentProvider.Worker">
+      <InstanceAddress roleName="SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker">
         <Subnets>
           <Subnet name="__subnet__" />
         </Subnets>
       </InstanceAddress>
     </AddressAssignments>
-    <LoadBalancers>
-      <LoadBalancer name="__ilbname__">
-        <FrontendIPConfiguration type="private" subnet="__subnet__" staticVirtualNetworkIPAddress="10.78.124.158" />
-      </LoadBalancer>
-    </LoadBalancers>
   </NetworkConfiguration>
 </ServiceConfiguration>
