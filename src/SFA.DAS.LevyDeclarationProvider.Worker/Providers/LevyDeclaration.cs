@@ -46,7 +46,6 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 
         public async Task RunAsync(CancellationToken cancellationToken)
         {
-            _logger.Info("Started Processing Paye Schemes");
             while (!cancellationToken.IsCancellationRequested)
             {
                 var message = await _pollingMessageReceiver.ReceiveAsAsync<EmployerRefreshLevyQueueMessage>();
