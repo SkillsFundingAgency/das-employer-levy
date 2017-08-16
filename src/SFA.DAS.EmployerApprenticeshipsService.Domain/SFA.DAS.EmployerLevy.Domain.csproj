@@ -164,7 +164,6 @@
     <Compile Include="Data\Repositories\IDasLevyRepository.cs" />
     <Compile Include="Interfaces\IAuditService.cs" />
     <Compile Include="Interfaces\ICache.cs" />
-    <Compile Include="Interfaces\IDasLevyService.cs" />
     <Compile Include="Interfaces\IConfiguration.cs" />
     <Compile Include="Interfaces\IEmpRefFileBasedService.cs" />
     <Compile Include="Interfaces\IHmrcService.cs" />
