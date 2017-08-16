@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Moq;
 using NUnit.Framework;
+using SFA.DAS.EmployerAccounts.Events.Messages;
 using SFA.DAS.EmployerLevy.Application.Commands.DeletePayeSchemeReference;
-using SFA.DAS.EmployerLevy.Application.Messages;
 using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers;
 using SFA.DAS.Messaging;
 using SFA.DAS.Messaging.FileSystem;
@@ -35,9 +32,9 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
             _cancellationTokenSource = new CancellationTokenSource();
 
             _pollingMessageReceiver = new Mock<IPollingMessageReceiver>();
-            _pollingMessageReceiver.Setup(x => x.ReceiveAsAsync<DeletePayeSchemeMessage>()).
-                ReturnsAsync(new FileSystemMessage<DeletePayeSchemeMessage>(stubDataFile, stubDataFile,
-                new DeletePayeSchemeMessage { EmpRef = ExpectedEmpRef })).Callback(() => { _cancellationTokenSource.Cancel(); });
+            _pollingMessageReceiver.Setup(x => x.ReceiveAsAsync<PayeSchemeDeletedMessage>()).
+                ReturnsAsync(new FileSystemMessage<PayeSchemeDeletedMessage>(stubDataFile, stubDataFile,
+                new PayeSchemeDeletedMessage { EmpRef = ExpectedEmpRef })).Callback(() => { _cancellationTokenSource.Cancel(); });
 
             _mediator = new Mock<IMediator>();
 
@@ -53,7 +50,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
             await _deleteDeletePayeScheme.RunAsync(_cancellationTokenSource.Token);
 
             //Assert
-            _pollingMessageReceiver.Verify(x => x.ReceiveAsAsync<DeletePayeSchemeMessage>(), Times.Once);
+            _pollingMessageReceiver.Verify(x => x.ReceiveAsAsync<PayeSchemeDeletedMessage>(), Times.Once);
         }
 
         [Test]
@@ -70,8 +67,8 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
         public async Task ThenTheCommandIsNotCalledIfTheMessageIsEmpty()
         {
             //Arrange
-            var mockFileMessage = new Mock<Message<DeletePayeSchemeMessage>>();
-            _pollingMessageReceiver.Setup(x => x.ReceiveAsAsync<DeletePayeSchemeMessage>())
+            var mockFileMessage = new Mock<Message<PayeSchemeDeletedMessage>>();
+            _pollingMessageReceiver.Setup(x => x.ReceiveAsAsync<PayeSchemeDeletedMessage>())
                                    .ReturnsAsync(mockFileMessage.Object)
                                    .Callback(() => { _cancellationTokenSource.Cancel(); });
 

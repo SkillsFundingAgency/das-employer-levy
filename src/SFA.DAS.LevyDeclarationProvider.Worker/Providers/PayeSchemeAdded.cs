@@ -2,8 +2,8 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using SFA.DAS.EmployerAccounts.Events.Messages;
 using SFA.DAS.EmployerLevy.Application.Commands.CreatePayeSchemeReference;
-using SFA.DAS.EmployerLevy.Application.Messages;
 using SFA.DAS.EmployerLevy.Domain.Attributes;
 using SFA.DAS.Messaging;
 using SFA.DAS.NLog.Logger;
@@ -28,9 +28,10 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 
         public async Task RunAsync(CancellationToken cancellationToken)
         {
+            _logger.Info("Started Add Paye Scheme Processing");
             while (!cancellationToken.IsCancellationRequested)
             {
-                var message = await _pollingMessageReceiver.ReceiveAsAsync<AddPayeSchemeMessage>();
+                var message = await _pollingMessageReceiver.ReceiveAsAsync<PayeSchemeCreatedMessage>();
                 try
                 {
                     if (message?.Content == null)
