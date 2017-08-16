@@ -210,10 +210,6 @@
     <Compile Include="Caching\InProcessCacheProvider.cs" />
     <Compile Include="Caching\RedisCache.cs" />
     <Compile Include="Caching\TaskSynchronizationScope.cs" />
-    <Compile Include="Data\PayeSchemesRepository.cs" />
-    <Compile Include="Data\EnglishFractionRepository.cs" />
-    <Compile Include="Data\DasLevyRepository.cs" />
-    <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="DependencyResolution\ConfigurationHelper.cs" />
     <Compile Include="DependencyResolution\ExecutionPolicyPolicy.cs" />
     <Compile Include="ExecutionPolicies\ExecutionPolicy.cs" />
@@ -233,7 +229,9 @@
     <Compile Include="Services\HmrcService.cs" />
     <Compile Include="Services\HttpClientWrapper.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SFA.DAS.EmployerApprenticeshipsService.Application\SFA.DAS.EmployerLevy.Application.csproj">
       <Project>{0226F97A-704E-49B0-A100-B75FEEC9C8AD}</Project>
