@@ -166,6 +166,10 @@
       <Project>{01ac2bc2-ac01-400f-ab8f-548dd5c0ee74}</Project>
       <Name>SFA.DAS.EmployerLevy.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SFA.DAS.EmployerLevy.DataAccess\SFA.DAS.EmployerLevy.DataAccess.csproj">
+      <Project>{64503e23-eb15-4704-be74-0e7db1e772c0}</Project>
+      <Name>SFA.DAS.EmployerLevy.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

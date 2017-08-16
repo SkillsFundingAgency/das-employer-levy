@@ -232,6 +232,10 @@
       <Project>{01AC2BC2-AC01-400F-AB8F-548DD5C0EE74}</Project>
       <Name>SFA.DAS.EmployerLevy.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SFA.DAS.EmployerLevy.DataAccess\SFA.DAS.EmployerLevy.DataAccess.csproj">
+      <Project>{64503e23-eb15-4704-be74-0e7db1e772c0}</Project>
+      <Name>SFA.DAS.EmployerLevy.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
