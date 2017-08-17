@@ -45,17 +45,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
         }
 
         [Test]
-        public async Task ThenTheMessageIsReadFromTheQueue()
-        {
-            //Act
-            await _payeSchemeAdded.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _pollingMessageReceiver.Verify(x => x.ReceiveAsAsync<PayeSchemeCreatedMessage>(), Times.Once);
-        }
-
-        [Test]
-        public async Task ThenTheCommandIsCalledWhenTheMessageIsNotEmpty()
+        public async Task ThenTheCommandIsCalled()
         {
             //Act
             await _payeSchemeAdded.RunAsync(_cancellationTokenSource.Token);
@@ -63,37 +53,5 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
             //Assert
             _mediator.Verify(x => x.SendAsync(It.Is<CreatePayeSchemeCommand>(c => c.EmpRef.Equals(ExpectedEmpRef))), Times.Once());
         }
-
-        [Test]
-        public async Task ThenTheCommandIsNotCalledIfTheMessageIsEmpty()
-        {
-            //Arrange
-            var mockFileMessage = new Mock<Message<PayeSchemeCreatedMessage>>();
-            _pollingMessageReceiver.Setup(x => x.ReceiveAsAsync<PayeSchemeCreatedMessage>())
-                                   .ReturnsAsync(mockFileMessage.Object)
-                                   .Callback(() => { _cancellationTokenSource.Cancel(); });
-
-            //Act
-            await _payeSchemeAdded.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _mediator.Verify(x => x.SendAsync(It.IsAny<CreatePayeSchemeCommand>()), Times.Never());
-            mockFileMessage.Verify(x => x.CompleteAsync(), Times.Once);
-        }
-
-        [Test]
-        public async Task ThenTheLoggerIsCalledIfAnExceptionIsThrown()
-        {
-            //Arrange
-            _mediator.Setup(x => x.SendAsync(It.IsAny<CreatePayeSchemeCommand>())).ThrowsAsync(new Exception());
-
-            //Act
-            await _payeSchemeAdded.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _logger.Verify(x=>x.Fatal(It.IsAny<Exception>(), It.IsAny<string>()));
-        }
-
-        
     }
 }

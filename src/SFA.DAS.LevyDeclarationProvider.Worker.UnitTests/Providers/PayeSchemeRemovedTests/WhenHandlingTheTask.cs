@@ -44,16 +44,6 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
         }
 
         [Test]
-        public async Task ThenTheMessageIsReadFromTheQueue()
-        {
-            //Act
-            await _deleteDeletePayeScheme.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _pollingMessageReceiver.Verify(x => x.ReceiveAsAsync<PayeSchemeDeletedMessage>(), Times.Once);
-        }
-
-        [Test]
         public async Task ThenTheCommandIsCalledWhenTheMessageIsNotEmpty()
         {
             //Act
@@ -61,36 +51,6 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
 
             //Assert
             _mediator.Verify(x => x.SendAsync(It.Is<DeletePayeSchemeCommand>(c => c.EmpRef.Equals(ExpectedEmpRef))), Times.Once());
-        }
-
-        [Test]
-        public async Task ThenTheCommandIsNotCalledIfTheMessageIsEmpty()
-        {
-            //Arrange
-            var mockFileMessage = new Mock<Message<PayeSchemeDeletedMessage>>();
-            _pollingMessageReceiver.Setup(x => x.ReceiveAsAsync<PayeSchemeDeletedMessage>())
-                                   .ReturnsAsync(mockFileMessage.Object)
-                                   .Callback(() => { _cancellationTokenSource.Cancel(); });
-
-            //Act
-            await _deleteDeletePayeScheme.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _mediator.Verify(x => x.SendAsync(It.IsAny<DeletePayeSchemeCommand>()), Times.Never());
-            mockFileMessage.Verify(x => x.CompleteAsync(), Times.Once);
-        }
-
-        [Test]
-        public async Task ThenTheLoggerIsCalledIfAnExceptionIsThrown()
-        {
-            //Arrange
-            _mediator.Setup(x => x.SendAsync(It.IsAny<DeletePayeSchemeCommand>())).ThrowsAsync(new Exception());
-
-            //Act
-            await _deleteDeletePayeScheme.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _logger.Verify(x => x.Fatal(It.IsAny<Exception>(), It.IsAny<string>()));
         }
     }
 }

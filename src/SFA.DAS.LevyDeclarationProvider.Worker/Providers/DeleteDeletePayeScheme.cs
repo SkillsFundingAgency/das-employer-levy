@@ -8,7 +8,7 @@ using SFA.DAS.NLog.Logger;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
-    public class DeleteDeletePayeScheme : Provider<PayeSchemeDeletedMessage>
+    public class DeleteDeletePayeScheme : MessageProcessor<PayeSchemeDeletedMessage>
     {
         [QueueName("employer_shared")]
         public string delete_paye_scheme { get; set; }

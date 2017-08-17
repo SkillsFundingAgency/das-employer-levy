@@ -38,7 +38,7 @@ namespace SFA.DAS.EmployerLevy.TestCommon.ScenarioCommonSteps
 
         public void RunWorker(IEnumerable<GetHMRCLevyDeclarationResponse> hmrcLevyResponses)
         {
-            var levyDeclaration = _container.GetInstance<IProvider>();
+            var levyDeclaration = _container.GetInstance<IMessageProcessor>();
             var levyDeclarationResponses = hmrcLevyResponses as GetHMRCLevyDeclarationResponse[] ?? hmrcLevyResponses.ToArray();
 
             var cancellationTokenSource = new CancellationTokenSource();
