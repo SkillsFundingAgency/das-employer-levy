@@ -8,7 +8,7 @@ using SFA.DAS.NLog.Logger;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
-    public class PayeSchemeAdded : Provider<PayeSchemeCreatedMessage>
+    public class PayeSchemeAdded : MessageProcessor<PayeSchemeCreatedMessage>
     {
         [QueueName("employer_shared")]
         public string add_paye_scheme { get; set; }

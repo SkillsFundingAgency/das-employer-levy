@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -9,7 +8,7 @@ using SFA.DAS.EmployerLevy.Domain.Configuration;
 using SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution;
 using SFA.DAS.EmployerLevy.Infrastructure.Logging;
 using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResolution;
-using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers;
+using SFA.DAS.Messaging;
 using StructureMap;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker
@@ -28,7 +27,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker
 
             try
             {
-                var providers = _container.GetAllInstances<IProvider>();
+                var providers = _container.GetAllInstances<IMessageProcessor>();
                 var taskList = providers.Select(x => x.RunAsync(_cancellationTokenSource.Token));
                 Task.WaitAll(taskList.ToArray());
             }

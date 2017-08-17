@@ -56,34 +56,6 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.UnitTests.Provider
         }
 
         [Test]
-        public async Task ThenTheMessageIsReceivedFromTheQueue()
-        {
-            //Act
-            await _levyDeclaration.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _pollingMessageReceiver.Verify(x => x.ReceiveAsAsync<EmployerRefreshLevyQueueMessage>(), Times.Once);
-        }
-
-        
-        [Test]
-        public async Task ThenTheCommandIsNotCalledIfTheMessageIsEmpty()
-        {
-            //Arrange
-            var mockFileMessage = new Mock<Message<EmployerRefreshLevyQueueMessage>>();
-            _pollingMessageReceiver.Setup(x => x.ReceiveAsAsync<EmployerRefreshLevyQueueMessage>())
-                                   .ReturnsAsync(mockFileMessage.Object)
-                                   .Callback(() => { _cancellationTokenSource.Cancel(); });
-
-            //Act
-            await _levyDeclaration.RunAsync(_cancellationTokenSource.Token);
-
-            //Assert
-            _mediator.Verify(x => x.SendAsync(It.IsAny<GetHMRCLevyDeclarationQuery>()), Times.Never());
-            mockFileMessage.Verify(x => x.CompleteAsync(), Times.Once);
-        }
-
-        [Test]
         public async Task ThenWhenHmrcHaveUpdatedTheirEnglishFractionCalculationsIShouldUpdateTheLevyCalculations()
         {
             //Assign

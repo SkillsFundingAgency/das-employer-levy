@@ -18,7 +18,7 @@ using SFA.DAS.NLog.Logger;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
-    public class LevyDeclaration : Provider<EmployerRefreshLevyQueueMessage>
+    public class LevyDeclaration : MessageProcessor<EmployerRefreshLevyQueueMessage>
     {
         [QueueName("employer_levy")]
         public string get_employer_levy { get; set; }
