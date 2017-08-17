@@ -7,6 +7,7 @@ using Moq;
 using SFA.DAS.EmployerLevy.Domain.Configuration;
 using SFA.DAS.EmployerLevy.Domain.Interfaces;
 using SFA.DAS.EmployerLevy.Infrastructure.Services;
+using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers;
 using SFA.DAS.Events.Api.Client;
 using SFA.DAS.Messaging;
 using SFA.DAS.NLog.Logger;
@@ -35,6 +36,7 @@ namespace SFA.DAS.EmployerLevy.TestCommon.DependencyResolution
             For<IHmrcService>().Use(hmrcService);
             For<IHmrcDateService>().Use<HmrcDateService>();
             For<IHashingService>().Use<HashingService>();
+            For<IProvider>().Use<LevyDeclaration>();
 
             RegisterExecutionPolicies();
 

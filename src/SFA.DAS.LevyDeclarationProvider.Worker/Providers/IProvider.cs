@@ -1,9 +1,9 @@
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
-    internal interface IPayeSchemeAdded
+    public interface IProvider
     {
         Task RunAsync(CancellationToken cancellationToken);
     }

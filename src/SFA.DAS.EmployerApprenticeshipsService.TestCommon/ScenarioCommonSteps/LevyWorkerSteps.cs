@@ -38,11 +38,10 @@ namespace SFA.DAS.EmployerLevy.TestCommon.ScenarioCommonSteps
 
         public void RunWorker(IEnumerable<GetHMRCLevyDeclarationResponse> hmrcLevyResponses)
         {
-            var levyDeclaration = _container.GetInstance<ILevyDeclaration>();
+            var levyDeclaration = _container.GetInstance<IProvider>();
             var levyDeclarationResponses = hmrcLevyResponses as GetHMRCLevyDeclarationResponse[] ?? hmrcLevyResponses.ToArray();
 
             var cancellationTokenSource = new CancellationTokenSource();
-
             
             var payeSchemes = levyDeclarationResponses.Select(x => x.Empref).Distinct();
 
