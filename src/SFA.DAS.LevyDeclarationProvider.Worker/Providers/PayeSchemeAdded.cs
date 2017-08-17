@@ -1,5 +1,3 @@
-using System;
-using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using SFA.DAS.EmployerAccounts.Events.Messages;
@@ -10,54 +8,23 @@ using SFA.DAS.NLog.Logger;
 
 namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers
 {
-    public class PayeSchemeAdded : IPayeSchemeAdded
+    public class PayeSchemeAdded : Provider<PayeSchemeCreatedMessage>
     {
         [QueueName("employer_shared")]
         public string add_paye_scheme { get; set; }
 
-        private readonly IPollingMessageReceiver _pollingMessageReceiver;
         private readonly IMediator _mediator;
-        private readonly ILog _logger;
-
-        public PayeSchemeAdded(IPollingMessageReceiver pollingMessageReceiver, IMediator mediator, ILog logger)
+        
+        public PayeSchemeAdded(IPollingMessageReceiver pollingMessageReceiver, IMediator mediator, ILog logger) : base(pollingMessageReceiver, logger)
         {
-            _pollingMessageReceiver = pollingMessageReceiver;
             _mediator = mediator;
-            _logger = logger;
         }
 
-        public async Task RunAsync(CancellationToken cancellationToken)
+        protected override async Task ProcessMessage(PayeSchemeCreatedMessage messageContent)
         {
-            
-            while (!cancellationToken.IsCancellationRequested)
-            {
-                var message = await _pollingMessageReceiver.ReceiveAsAsync<PayeSchemeCreatedMessage>();
-                try
-                {
-                    if (message?.Content == null)
-                    {
-                        if (message != null)
-                        {
-                            await message.CompleteAsync();
-                        }
-                        continue;
-                    }
-
-                    var empRef = message.Content.EmpRef;
-                    await _mediator.SendAsync(new CreatePayeSchemeCommand { EmpRef = empRef });
-
-                    await message.CompleteAsync();
-
-                    _logger.Info($"Completed added scheme {empRef}");
-                }
-                catch (Exception ex)
-                {
-                    _logger.Fatal(ex,$"Failed to add reference to scheme [{message?.Content?.EmpRef}]");
-                    break;
-                }
-                
-            }
-            
+            var empRef = messageContent.EmpRef;
+            await _mediator.SendAsync(new CreatePayeSchemeCommand { EmpRef = empRef });
+            Log.Info($"Completed added scheme {empRef}");
         }
     }
 }

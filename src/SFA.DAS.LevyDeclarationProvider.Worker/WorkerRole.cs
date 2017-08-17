@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,17 +28,8 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker
 
             try
             {
-                var levyDeclaration = _container.GetInstance<ILevyDeclaration>();
-                var payeSchemeAdded = _container.GetInstance<IPayeSchemeAdded>();
-                var deletePayeScheme = _container.GetInstance<IDeletePayeScheme>();
-
-                var taskList = new List<Task>
-                {
-                    Task.Factory.StartNew(() => levyDeclaration.RunAsync(_cancellationTokenSource.Token)),
-                    Task.Factory.StartNew(() => payeSchemeAdded.RunAsync(_cancellationTokenSource.Token)),
-                    Task.Factory.StartNew(() => deletePayeScheme.RunAsync(_cancellationTokenSource.Token))
-                };
-                
+                var providers = _container.GetAllInstances<IProvider>();
+                var taskList = providers.Select(x => x.RunAsync(_cancellationTokenSource.Token));
                 Task.WaitAll(taskList.ToArray());
             }
             finally

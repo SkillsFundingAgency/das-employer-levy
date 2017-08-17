@@ -5,6 +5,7 @@ using AutoMapper;
 using MediatR;
 using SFA.DAS.EmployerLevy.Domain.Configuration;
 using SFA.DAS.EmployerLevy.Infrastructure.DependencyResolution;
+using SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.Providers;
 using SFA.DAS.Events.Api.Client;
 using SFA.DAS.Events.Api.Client.Configuration;
 using SFA.DAS.NLog.Logger;
@@ -24,6 +25,7 @@ namespace SFA.DAS.EmployerLevy.LevyDeclarationProvider.Worker.DependencyResoluti
             {
                 scan.AssembliesFromApplicationBaseDirectory(a => a.GetName().Name.StartsWith("SFA.DAS."));
                 scan.RegisterConcreteTypesAgainstTheFirstInterface();
+                scan.AddAllTypesOf<IProvider>();
             });
             
             For<IConfiguration>().Use<EmployerLevyConfiguration>();
