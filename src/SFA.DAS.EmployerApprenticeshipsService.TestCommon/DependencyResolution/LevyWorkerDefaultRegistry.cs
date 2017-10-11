@@ -15,6 +15,7 @@ using StructureMap;
 using StructureMap.Graph;
 using WebGrease.Css.Extensions;
 using IConfiguration = SFA.DAS.EmployerLevy.Domain.Interfaces.IConfiguration;
+using SFA.DAS.HashingService;
 
 namespace SFA.DAS.EmployerLevy.TestCommon.DependencyResolution
 {
@@ -35,7 +36,7 @@ namespace SFA.DAS.EmployerLevy.TestCommon.DependencyResolution
             For<IPollingMessageReceiver>().Use(messageReceiver);
             For<IHmrcService>().Use(hmrcService);
             For<IHmrcDateService>().Use<HmrcDateService>();
-            For<IHashingService>().Use<HashingService>();
+            For<IHashingService>().Use(new HashingService.HashingService("12345QWERTYUIOPNDGHAK", "TEST: Dummy hash code London is a city in UK"));
             For<IMessageProcessor>().Use<LevyDeclaration>();
 
             RegisterExecutionPolicies();
