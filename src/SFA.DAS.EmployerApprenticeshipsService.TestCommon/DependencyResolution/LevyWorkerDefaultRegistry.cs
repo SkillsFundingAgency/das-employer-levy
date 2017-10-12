@@ -35,7 +35,6 @@ namespace SFA.DAS.EmployerLevy.TestCommon.DependencyResolution
             For<IPollingMessageReceiver>().Use(messageReceiver);
             For<IHmrcService>().Use(hmrcService);
             For<IHmrcDateService>().Use<HmrcDateService>();
-            For<IHashingService>().Use<HashingService>();
             For<IMessageProcessor>().Use<LevyDeclaration>();
 
             RegisterExecutionPolicies();
